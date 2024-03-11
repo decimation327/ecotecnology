@@ -1,0 +1,93 @@
+<div>
+  <app-nav-usuario></app-nav-usuario>
+</div>
+
+
+<div class="volver">
+  <!-- Botón para volver atrás -->
+  <button (click)="goBack()" class="btn-go-back">
+    <span class="sr-only">Volver</span>
+    <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+    </svg>
+  </button>
+</div>
+
+
+<div class="descripcion">
+
+  <h2 class="tituloAgenda">Agendamiento de Recolección de Componentes Electrónicos</h2>
+
+  <p class="parrafoAgenda">Bienvenido a nuestro servicio exclusivo de agendamiento de citas para la recolección de tus
+    componentes electrónicos. En ecotecnology, nos enorgullece brindarte la oportunidad de contribuir al reciclaje
+    responsable de dispositivos electrónicos y, al mismo tiempo, obtener beneficios al vender tus componentes obsoletos.
+    <br>
+    Al agendar una cita con nosotros, estás dando un paso importante hacia la reducción de desechos electrónicos y
+    apoyando la sostenibilidad. ¡Gracias por unirte a nosotros en esta misión de cuidar nuestro planeta!
+  </p>
+
+</div>
+
+<div class="calendar">
+  <full-calendar #calendar [options]="calendarOptions">
+    <ng-template #eventContent let-event>
+      <div class="event-content">
+        <b>{{ event.timeText }}</b>
+        <i>{{ event.event.title }}</i>
+        <div *ngIf="event.start">
+          <p>Fecha: {{ event.start | date:'dd/MM/yyyy' }}</p>
+          <p>Hora: {{ event.start | date:'HH:mm' }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </full-calendar>
+</div>
+
+<div class="btnModal">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Agendar cita
+  </button>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agendar cita</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+          <div class="inputs-left">
+            <h4>Fecha de Recolección</h4>
+            <input type="date" [(ngModel)]="selectedDate">
+            
+            <h4>Hora de Recolección</h4>
+            <input type="time" [(ngModel)]="selectedTime">
+            
+            <h4>Descripcion Componente</h4>
+            <input type="text" [(ngModel)]="componentName">
+            
+            <h4>Estado Componente</h4>
+            <input type="text" [(ngModel)]="EstadoComponente">
+            
+            <h4>Cantidad</h4>
+            <input type="number" [(ngModel)]="Cantidad">
+          </div>
+          
+          <div class="inputs-right">
+            <div class="imagenInput">
+              <input type="file" (change)="handleFileInput($event)">
+              <img *ngIf="imageSrc" [src]="imageSrc" alt="Vista previa de la imagen" style="max-width: 100%; max-height: 300px;">
+            </div>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnCerrar" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-Enviar" id="btnEnviar" (click)="onUnderstoodClick()">Enviar</button>
+      </div>
+  </div>
+</div>
+
+<div>
+</div>

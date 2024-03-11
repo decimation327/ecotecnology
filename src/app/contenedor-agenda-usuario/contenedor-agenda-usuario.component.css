@@ -1,0 +1,217 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.btn-go-back {
+  /* Agrega sombra al botón */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.btn-go-back:hover {
+  transform: scale(1.1);
+  background-color: rgb(14, 111, 156);
+  color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Agrega más sombra al hover */
+}
+
+.btn-go-back:active {
+  transform: scale(0.9);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Agrega sombra al pulseo */
+}
+
+.icon-arrow-left {
+  fill: #333;
+  width: 44px;
+  height: 44px;
+  transform: rotateY(180deg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+
+
+
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ... (código existente) ... */
+.descripcion {
+  padding: 10px 0px 22px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tituloAgenda {
+  color: #1a78aa;
+}
+
+.parrafoAgenda {
+  font-size: 22px;
+  width: 100vh;
+}
+
+:host ::ng-deep .calendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:host ::ng-deep full-calendar {
+  width: 50%;
+}
+
+/* Cambios para los botones del calendario */
+:host ::ng-deep .fc-button {
+  background-color: #1a78aa;
+  /* Color de fondo principal */
+  color: #fff;
+  /* Color del texto */
+  border-color: #0056b3;
+  /* Color del borde */
+}
+
+:host ::ng-deep .fc-button:hover {
+  background-color: #1a78aab8;
+  /* Cambio de color al pasar el ratón */
+  color: #fff;
+  border-color: #0056b3;
+}
+
+:host ::ng-deep .fc-button-disabled {
+  background-color: #1a78aa;
+  /* Color de fondo cuando está deshabilitado */
+  border-color: #1a78aa;
+  color: var(--fc-button-text-color);
+}
+
+/* Cambios de colores para algunos títulos */
+:host ::ng-deep .modal-title {
+  color: white;
+  /* Color del título del modal */
+}
+
+:host ::ng-deep .modal-header {
+  background-color: #1a78aa;
+  /* Color de fondo del encabezado del modal */
+  color: white;
+}
+
+
+.modal-content{
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60vh;
+    height: 60vh;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+.modal-body input {
+  width: 26vh;
+  height: 4vh;
+}
+
+.modal-content h4 {
+  width: 26vh;
+}
+/* ... (código existente) ... */
+
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-left {
+  width: 48%; /* Ajusta según sea necesario */
+}
+
+.inputs-right {
+  width: 48%; /* Ajusta según sea necesario */
+}
+
+/* ... (código existente) ... */
+.modal-dialog{
+  width: 50vh;
+  height: 50vh;
+}
+.btn-primary {
+  padding: 12px 394px;
+  letter-spacing: 7px;
+  font-weight: 900;
+}
+
+/* ... (código existente) ... */
+
+
+#btnCerrar {
+  background-color: rgba(222, 74, 74, 0.899);
+}
+
+#btnEnviar {
+  background-color: #1a78aa;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #00ff88;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.btnModal {
+  width: auto;
+  padding-left: 50vh;
+}
+
+

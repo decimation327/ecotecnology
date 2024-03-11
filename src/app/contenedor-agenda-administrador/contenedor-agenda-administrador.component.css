@@ -1,0 +1,889 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+main {
+    background-color: white;
+    margin: 0 auto;
+    width: 1900px;
+    height: auto;
+    border: 0.1px solid grey;
+}
+
+
+
+
+
+.btn-go-back {
+    /* Agrega sombra al botón */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 9999;
+  }
+  
+  .btn-go-back:hover {
+    transform: scale(1.1);
+    background-color: rgb(14, 111, 156);
+    color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Agrega más sombra al hover */
+  }
+  
+  .btn-go-back:active {
+    transform: scale(0.9);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Agrega sombra al pulseo */
+  }
+  
+  .icon-arrow-left {
+    fill: #333;
+    width: 44px;
+    height: 44px;
+    transform: rotateY(180deg);
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+
+
+
+  .gestion-citas-info {
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.gestion-citas-info h1 {
+    color: #333;
+    font-size: 40px;
+    font-weight: 600;
+    text-align:center;
+    margin-bottom: 56px;
+}
+
+.info-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #606060;
+    text-align: justify;
+}
+
+
+h1::before {
+    content: " ";
+    display: block;
+    height: 1rem;
+}
+
+
+/*estilos para el buscador de fechas*/
+.fecha-container {
+    margin-top: 18px;
+    margin-left: 18px;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .fecha-container label {
+    font-weight:bolder;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .fecha-input-container {
+    position: relative;
+    flex-grow: 1;
+  }
+  
+  .fecha-input {
+    width: calc(94% - 40px); /* Reducir el ancho para dar espacio al botón */
+    padding: 8px 580px;;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #c8b0b028; /* Cambiar el color de fondo a oscuro */
+    color: white;
+ }
+ .fecha-input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  
+  .fecha-input:focus {
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .fecha-input-container:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 40%;
+    background-color: #ccc;
+  }
+  
+  .fecha-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    padding: 9px 20px;
+    background-color: #20649bd1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fecha-button:hover {
+    background-color: #45a049;
+  }
+
+
+.material-icons {
+    font-size: 29px;
+    width: 70px;
+    padding-top: 11px;
+}
+
+
+/*diseño del filtro*/
+.select-container {
+    position: relative;
+    width: 15%;
+    border: 1px solid #b7b7b7;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2a3338; 
+    margin-left: 150px;
+}
+
+
+.select-label {
+    position: absolute;
+    top: -2px;
+    left: 19px;
+    background-color: #20649bd1;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 0 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translateY(50%);
+}
+
+select {
+    padding: 9px 16px 5px 10px;
+    border: 1px solid #b7b7b7;
+    border-radius: 4px;
+    font-size: 17px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #7e7b7b; /* Agregado este estilo */
+    background-color: transparent; 
+}
+
+
+/*Diseño de la tabla citas*/
+
+.datatable-container {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #2a3338;
+    border-radius: 27px;
+    color: white;
+    width: 93%;
+    max-height: 1600px; /* Establece la altura máxima de la tabla */
+    overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando la tabla excede la altura máxima */
+    margin: 41px auto;
+    font-size: 23px;
+    margin-bottom: 87px;
+}
+
+.datatable-container .header-tools {
+    border-bottom: solid 10px rgb(64, 68, 73);
+    margin-right: 0px;
+    padding: 10px;
+    display: flex;
+    align-items: baseline;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #2a3338;
+}
+
+.datatable-container .header-tools .search {
+    width: 80%;
+}
+
+.datatable-container .header-tools .search .search-input {
+    width: 100%;
+    background-color: rgb(64, 68, 73);
+    display: block;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 10px rgb(64, 68, 73);
+    color: white;
+}
+
+.datatable-container .header-tools .tools {
+    width: 70%;
+}
+
+.datatable-container .header-tools .tools ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.datatable-container .header-tools .tools ul li {
+    display: inline-block;
+    margin: 0 5px;
+    align-items: baseline;
+}
+
+.datatable-container .footer-tools {
+    padding: 30px;
+    display: flex;
+    align-items: baseline;
+
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    background-color: #2a3338;
+}
+
+.datatable-container .footer-tools .list-itens {
+    width: 50%;
+}
+
+.datatable-container .footer-tools .pages {
+    margin-left: auto;
+    margin-right: 147;
+    width: 50%;
+    font-size: 20px;
+}
+
+.datatable-container .footer-tools .pages ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+.datatable-container .footer-tools .pages ul li {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.datatable-container .footer-tools .pages ul li button,
+.datatable-container .header-tools .tools ul li button {
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.datatable-container .footer-tools .pages ul li button:hover,
+.datatable-container .header-tools .tools ul li button:hover {
+    background: #3282b8;
+    color: white;
+}
+
+.datatable-container .footer-tools .pages ul li span.active {
+    background-color: #3282b8;
+    border-radius: 3px;
+}
+
+.datatable-container .footer-tools .pages ul li button,
+.datatable-container .footer-tools .pages ul li span,
+.datatable-container .header-tools .tools ul li button {
+    padding: 6px 12px;
+}
+
+.datatable-container .datatable {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px; /* Reducir el tamaño de la fuente */
+}
+
+
+
+.datatable-container .datatable th,
+.datatable-container .datatable td {
+    padding: 15px; /* Reducir el padding para reducir el espacio entre las celdas */
+
+}
+
+.datatable-container .datatable th {
+    font-weight: bold;
+    text-align: left;
+    border-bottom: solid 1px rgb(64, 68, 73);
+}
+
+.datatable-container .datatable tbody tr:nth-child(even) {
+    background-color: rgb(64, 68, 73);
+}
+
+.datatable-container .datatable tbody tr:hover {
+    background-color: #3282b8;
+}
+
+.datatable-container .datatable tbody tr .available::after,
+.datatable-container .datatable tbody tr .away::after,
+.datatable-container .datatable tbody tr .offline::after {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.datatable-container .datatable tbody tr .available::after {
+    content: 'Available';
+    color: greenyellow;
+}
+
+.datatable-container .datatable tbody tr .away::after {
+    content: 'Away';
+    color: lightsalmon;
+}
+
+.datatable-container .datatable tbody tr .offline::after {
+    content: 'Offline';
+    color: lightgray;
+}
+
+.datatable-container .datatable tbody tr .available::before,
+.datatable-container .datatable tbody tr .away::before,
+.datatable-container .datatable tbody tr .offline::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.datatable-container .datatable tbody tr .available::before {
+    background-color: greenyellow;
+}
+
+.datatable-container .datatable tbody tr .away::before {
+    background-color: lightsalmon;
+}
+
+.datatable-container .datatable .offline::before {
+    background-color: lightgray;
+}
+
+/* Agregar estilos para los botones de funcionalidades */
+.datatable-container .header-tools .tools ul li button {
+    background-color: #1c5071;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave al interactuar */
+  }
+  
+  .datatable-container .header-tools .tools ul li button:hover {
+    background-color: #265d98;
+    transform: scale(1.1); /* Ligero aumento de tamaño */
+  }
+
+  .datatable-container .header-tools .tools ul li button:active {
+    background-color: #265d98;
+    transform: scale(0.9); /* Efecto de presión */
+  }
+
+
+    /* Estilos para el buscador de la tabla */
+    
+    .search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #b7b7b7;
+        border-radius: 6px;
+        padding: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin-left: 50px;
+      }
+      
+      .search-input {
+        flex-grow: 1;
+        padding: 5px 30px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        outline: none;
+      }
+      
+      .search-input::placeholder {
+        color: #b7b7b7;
+        font-style: italic;
+      }
+      
+      .search-btn,
+      .clear-btn {
+        padding: 8px 8px;
+        margin-left: 5px;
+        background-color: #3282b8;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .search-btn:hover,
+      .clear-btn:hover {
+        background-color: #1ccf40;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); /* Sombras para dar sensación de elevación */
+      }
+      
+      .clear-btn {
+        margin-left: 8px;
+      }
+      
+      .clear-btn:focus,
+      .search-btn:focus {
+        outline: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .clear-btn:active,
+      .search-btn:active {
+        transform: scale(0.95);
+      }
+  
+
+
+  /* Estilos para el boton de seleccionar */
+  .select-button {
+    background-color: #3282b8;
+    border: none;
+    color: white;
+    padding: 8px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .select-button:hover {
+    background-color: #1ccf40;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); /* Sombras para dar sensación de elevación */
+  }
+  
+  .select-button.selected {
+    background-color: #b7c9b7;
+  }
+  
+  .select-button.selected:hover {
+    background-color: #000000;
+  }
+  
+  .select-button:focus {
+    outline: none;
+  }
+  
+  .select-button:active {
+    transform: scale(0.95);
+  }
+  
+
+       /* Estilos para el boton editar cita de la tabla */
+
+
+  .edit-button {
+    background-color: #3282b8;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #1ccf40;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); /* Sombras para dar sensación de elevación */
+  }
+  
+  .edit-button:focus {
+    outline: none;
+  }
+  
+  .edit-button:active {
+    transform: scale(0.95);
+  }
+
+
+/* Estilos para el modal */
+.modal-explanation p {
+  font-size: 16px; /* Tamaño de fuente adecuado para legibilidad */
+  color: #666; /* Color de texto que provee contraste sin ser abrumador */
+  margin-bottom: 20px; /* Espaciado para separar del formulario */
+  line-height: 1.5; /* Espaciado de línea para mejorar la legibilidad */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-size: 25px;
+    background-color: rgba(7, 7, 7, 0.576);
+}
+
+.modal-content {
+  z-index: 1051; /* Más alto que el .modal para asegurar visibilidad */
+
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%; /* Cambiado a 50% para que ocupe más espacio */
+    overflow: hidden; /* Oculta el contenido que se salga del modal */
+}
+
+.close {
+    color: black;
+    font-size: 48px;
+    font-weight: bold;
+    margin-left: 95%;
+}
+
+.close:hover,
+.close:focus {
+    color: #17cd2f;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tituloh2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 32px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: .0125em;
+    margin: 0 0 16px;
+}
+
+.input-group {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    border-bottom: 4px solid #25282f;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input[type="text"] {
+    width: calc(100% - 40px); /* Ajusta el ancho del input para que no sobresalga */
+    padding: 1.0rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para los botones */
+.save-button,
+.cancel-button {
+    padding: 18px 10px;
+    margin: 4px 12px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    float: right;
+}
+
+.save-button {
+  background-color: #3282b8;
+  color: white;
+}
+
+.save-button:hover {
+    background-color: #1566bd;
+}
+
+.cancel-button {
+    background-color: #ba4d4d;
+    color: rgb(255, 255, 255);
+}
+
+.cancel-button:hover {
+    background-color: #d21010;
+}
+
+
+
+
+
+
+.footer-tools {
+  display: flex;
+  justify-content: flex-start; /* Alinea los elementos hijos (botones) a la izquierda */
+  align-items: center; /* Opcional: centra los botones verticalmente si es necesario */
+  padding-right: 20px; /* Añade un poco de espacio a la derecha si es necesario */
+}
+
+.footer-tools .pagination, .footer-tools .calendar-button {
+  margin-left: 10px; /* Asegura un espaciado uniforme entre los elementos */
+}
+
+
+
+/* Estilos para el footer de la tabla: paginacion y calendario de busqueda */
+
+/* Estilos para los botones de paginación */
+.pagination .nav-button, .page-button {
+  background-color: #1c5071;
+  border: none;
+  color: white; /* Texto blanco */
+  padding: 5px 10px; /* Espaciado interno */
+  margin: 5px 2px; /* Ajusta el margen entre botones si es necesario */
+  border-radius: 2px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo pointer */
+  transition: background-color 0.3s, transform 0.2s; /* Transición suave al interactuar */
+  
+}
+
+.pagination .nav-button:hover, .page-button:hover {
+  background-color: #265d98;
+  transform: scale(1.1); /* Ligero aumento de tamaño */
+}
+
+.pagination .nav-button:active, .page-button:active {
+  background-color: #004094; /* Azul aún más oscuro al hacer clic */
+  transform: scale(0.9); /* Efecto de presión */
+}
+
+/* Estilos para el botón de abrir el calendario */
+.calendar-button {
+  background-color: #28a745; /* Verde para diferenciar la funcionalidad */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block; /* Cambiado a inline-block si necesitas alinear con otros botones */
+  margin: 20px auto; /* Centra el botón y proporciona espacio alrededor */
+}
+
+.calendar-button:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.calendar-button:active {
+  background-color: #1e7e34; /* Verde aún más oscuro al hacer clic */
+  transform: scale(0.95);
+}
+
+
+
+
+/* Estilos para el modal del calendario de busqueda */
+
+    .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 1px;
+        width: 100%;
+        height: 500px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calendar-header {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 1px;
+        padding: 10px;
+        background-color: #3282b8;
+        color: white;
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .calendar-header button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .calendar-header h2 {
+        grid-column: span 5;
+        text-align: center;
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    .calendar-body {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 26px;
+        padding: 35px;
+        background-color: white;
+        border-radius: 0 0 5px 5px;
+    }
+    
+    .calendar-body button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #3282b8;
+        cursor: pointer;
+    }
+    
+    
+    .calendar-body button:hover {
+        background-color: #558ece;
+    }
+    
+    .calendar-body button.selected {
+        background-color: #3282b8;
+        color: white;
+    }
+    
+    .calendar-body button.selected:hover {
+        background-color: #1566bd;
+    }
+
+
+    .calendar-day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        height: 60px; /* Altura deseada para los botones */
+        width: 100%;
+    }
+    
+    .calendar-day button {
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        width: 100%; /* Ancho completo del botón */
+        cursor: pointer;
+    }
+    
+    .calendar-day button:hover {
+        background-color: #1566bd;
+        color: white;
+    }
+
+    /* Estilos para popup de imagen*/
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0); /* Fondo negro semi-transparente */
+      z-index: 1000; /* Asegura que el pop-up se muestre sobre otros elementos */
+    }
+
+  
+    
+    .imagen-popup {
+      max-width: 80%;
+      max-height: 80%;
+      box-shadow: 0 0 10px #000;
+    }
+    
+
+    /* Estilo para el botón Ver Imagen */
+button.ver-imagen-btn {
+  background-color: #3282b8;
+  border: none;
+  color: white;
+  padding: 12px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s, box-shadow 0.2s;
+}
+
+button.ver-imagen-btn:hover {
+  background-color: #1ccf40;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); /* Sombras para dar sensación de elevación */
+}
+
+button.ver-imagen-btn:active {
+  background-color: #3e8e41; /* Un tono más oscuro para el efecto de pulsado */
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Sombra interna para el efecto de pulsado */
+}

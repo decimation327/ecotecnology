@@ -1,0 +1,375 @@
+/* app.component.css */
+section{
+  margin-left: 185px;
+}
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: black; /* Color negro para el icono del menú */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+  .menu-options {
+    display: flex;
+    flex-direction: column; /* Alinea las opciones en columna por defecto */
+    align-items: flex-start; /* Alinea las opciones al principio */
+    height: 100%;
+    width: 13%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: width 0.3s;
+  }
+  
+  .menu-options.abreviado {
+    width: 10%;
+  }
+  
+  .menu-options.show-menu {
+    width: 13%;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de la lista en columna */
+    height: 100%; /* Ocupa toda la altura de la página */
+  }
+  
+  /* Aplicar un ancho específico a estas opciones */
+  .menu-options.abreviado li,
+  .menu-options.show-menu li {
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    height: 360px;
+    align-items: center;
+  }
+  
+  /* Ajustes para la última opción */
+  .menu-options.abreviado li:last-child,
+  .menu-options.show-menu li:last-child {
+    border-bottom: none;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+  
+
+ /* Estilos para el formulario */
+
+ #principal{
+  background: rgb(14, 111, 156);
+  height: 28vh;
+  margin: auto;
+  overflow: hidden;
+ }
+
+
+.formulario-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  color: black;
+  font-size: 20px;
+  width: 60%;
+  padding: 52px;
+  margin-left: 20%;
+  margin-top: -122px;
+  position: relative;
+  z-index: 1;
+}
+.logo{
+  vertical-align: middle;
+  width: 36vh;
+}
+
+.formulario-section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center; /* Modificar esta propiedad */
+  width: 100%;
+}
+
+.form-group {
+  flex: 0;
+  margin-bottom: 1rem;
+  order: 1;
+  padding-top: 0px;
+  width: 100%; /* Cambiar el ancho a 100% */
+  max-width: 450px;  
+  margin-left: 80px;
+   /* Agregar una propiedad max-width */
+}
+
+
+.another-form-group {
+  flex: 1;
+  margin-bottom: 1rem;
+  order: 2;
+  padding-top: 0px;
+  width: 100%;
+  max-width: 450px;
+} 
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+}
+
+.formulario-section .form-control {
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+ 
+}
+
+
+
+.formulario-section .form-control:hover {
+  border-color: #45ce23;
+  cursor: pointer;
+}
+
+input{
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-pic-container {
+  width: 150px;
+  height: 149px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto -4rem auto;
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  background-color: #45ce23;
+  color: white;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #28a4d4;
+}
+
+.aviso-rol {
+  position: absolute;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 8px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: -117px;
+  margin-left: -154px;
+  z-index: 1;
+  width: 146px; 
+}
+
+.input-with-toggle {
+  position: relative;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 10px; /* Ajusta la posición del ícono según sea necesario */
+  top: calc(50% - 10px); /* Ajusta la posición del ícono verticalmente según sea necesario */
+  cursor: pointer;
+  font-size: 1.2rem; /* Ajusta el tamaño del ícono según sea necesario */
+  color: #ccc; /* Ajusta el color del ícono según sea necesario */
+}
+
+.toggle-icon.mostrar {
+  color: #007bff; /* Cambia el color del ícono cuando se muestra la contraseña */
+}
+
+.toggle-icon.ocultar {
+  color: #ccc; /* Cambia el color del ícono cuando se oculta la contraseña */
+}
+
+@media (min-width: 1025px) {
+  .menu-options {
+      width: 300px; /* Ajusta el menú para un acceso fácil y visualmente atractivo */
+  }
+
+  section {
+      margin-left: 310px; /* Asegura que el contenido principal se alinee correctamente con el menú ampliado */
+  }
+
+  .formulario-section {
+      width: 60%; /* Optimiza el ancho para lectura y estética */
+      margin-left: auto; /* Centrado automático para mantener el diseño alineado y profesional */
+      margin-right: auto;
+      padding: 40px; /* Espaciado interno generoso para comodidad visual */
+  }
+
+  .form-group, .another-form-group {
+      padding-top: 15px; /* Espaciado superior para una mejor separación visual */
+      width: 80%; /* Utiliza un ancho relativo para mantener la accesibilidad de los campos */
+      margin-left: 10%; /* Centrado ligero dentro de su contenedor */
+  }
+
+  /* Ajustes adicionales para elementos específicos pueden incluir */
+  .menu-icon {
+      font-size: 24px; /* Ligeramente más grande para facilitar la interacción */
+  }
+
+  .profile-pic-container {
+      width: 150px; /* Ajuste del tamaño para mantener proporciones agradables */
+      height: 150px;
+  }
+
+  .botones button {
+      padding: 15px 30px; /* Botones más grandes para una fácil interacción */
+      font-size: 20px; /* Tamaño de fuente aumentado para mejor legibilidad */
+  }
+
+  /* Asegurar que el texto y otros elementos sean lo suficientemente grandes para leerse fácilmente */
+  body {
+      font-size: 18px; /* Tamaño de fuente base para mejorar la legibilidad en pantallas grandes */
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .menu-options {
+      width: 250px; /* Ajuste para mejorar la accesibilidad */
+  }
+
+  section {
+      margin-left: 260px; /* Alinea el contenido principal correctamente */
+  }
+
+  .formulario-section {
+      width: 70%; /* Mejora la legibilidad */
+      margin-left: 15%; /* Centra el formulario */
+      padding: 20px; /* Mejor espaciado interno */
+  }
+
+  .form-group, .another-form-group {
+      margin-left: 0; /* Elimina el margen izquierdo */
+      padding-top: 10px; /* Separación visual */
+      width: 100%; /* Utiliza todo el ancho disponible */
+  }
+
+  .menu-icon {
+      font-size: 20px; /* Mejora la interacción */
+  }
+
+  .profile-pic-container {
+      width: 120px; /* Dimensiones coherentes */
+      height: 120px;
+  }
+
+  .botones button {
+      padding: 10px 20px; /* Mejor manipulación */
+      font-size: 18px; /* Mejora la legibilidad */
+  }
+
+  .toggle-icon {
+      right: 15px; /* Mejora la accesibilidad */
+      font-size: 18px; /* Facilita la interacción */
+  }
+
+  .aviso-rol {
+      margin-top: 10px; /* Evita superposiciones */
+      width: auto; /* Ajusta al contenido */
+  }
+
+  body {
+      font-size: 16px; /* Mejora la legibilidad general */
+  }
+
+  ul, li {
+      padding: 15px; /* Facilita la interacción táctil */
+  }
+}
+
+
+
+
+
+/* Pantallas pequeñas (teléfonos, dispositivos con un ancho de hasta 767px) */
+@media (max-width: 767px) {
+  .menu-icon {
+      font-size: 24px; /* Un poco más grande para facilitar la interacción */
+  }
+
+  .menu-options {
+      width: 100%; /* Ocupar el ancho completo para un acceso fácil */
+      padding: 10px 0; /* Espaciado adecuado */
+  }
+
+  .menu-options, .menu-options.abreviado, .menu-options.show-menu {
+      flex-direction: column; /* Mejor para espacios verticales limitados */
+      align-items: start; /* Alineación al inicio para accesibilidad */
+      overflow-x: hidden; /* Evitar desplazamiento horizontal */
+  }
+
+  section, .formulario-section, .form-group, .another-form-group {
+      width: 95%; /* Más espacio para el contenido */
+      margin: 20px auto; /* Centrado con margen superior para separación */
+      padding: 15px; /* Espaciado adecuado */
+  }
+
+  .form-row {
+      flex-direction: column;
+  }
+
+  .botones button {
+      margin: 10px 0; /* Espacio entre botones */
+  }
+
+  .profile-pic-container {
+      margin-top: 0; /* Ajustar según el contenido */
+  }
+
+  .aviso-rol {
+      position: relative;
+      margin-top: 10px;
+      width: 90%; /* Ajustar el ancho para mejor visualización */
+  }
+}

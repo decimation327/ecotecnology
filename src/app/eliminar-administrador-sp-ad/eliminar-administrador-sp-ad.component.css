@@ -1,0 +1,115 @@
+/* app.component.css */
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: black; /* Color negro para el icono del menú */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+  .menu-options {
+    display: flex;
+    flex-direction: column; /* Alinea las opciones en columna por defecto */
+    align-items: flex-start; /* Alinea las opciones al principio */
+    height: 100%;
+    width: 13%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: width 0.3s;
+  }
+  
+  .menu-options.abreviado {
+    width: 7%;
+  }
+  
+  .menu-options.show-menu {
+    width: 13%;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de la lista en columna */
+    height: 100%; /* Ocupa toda la altura de la página */
+  }
+  
+  /* Aplicar un ancho específico a estas opciones */
+  .menu-options.abreviado li,
+  .menu-options.show-menu li {
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    height: 204px;
+    align-items: center;
+  }
+  
+  /* Ajustes para la última opción */
+  .menu-options.abreviado li:last-child,
+  .menu-options.show-menu li:last-child {
+    border-bottom: none;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+  
+
+  h1{
+    text-align: center;
+    background-color: aqua;
+}
+
+
+.formulario-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    height: 100vh;
+    background-color: aqua;
+    
+  }
+  
+/* app.component.css */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-bottom: 10px;
+    order: 1; /* Establece el orden deseado */
+  }
+  
+  /* Agrega más form-group con órdenes diferentes según sea necesario */
+  .another-form-group {
+    flex: 1;
+    margin-bottom: 10px;
+    order: 2; /* Orden diferente */
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Ajusta el ancho del formulario según tu preferencia */
+    margin: auto; /* Centra el formulario horizontalmente */
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input, button {
+    margin-bottom: 10px;
+  }
+  

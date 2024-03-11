@@ -1,0 +1,107 @@
+<div>
+    <div>
+        <app-nav-usuario></app-nav-usuario>
+    </div>
+</div>
+
+    <div class="volver">
+        <!-- Botón para volver atrás -->
+        <button (click)="goBack()" class="btn-go-back">
+        <span class="sr-only">Volver</span>
+        <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+        </svg>
+        </button>
+    </div>
+
+
+    
+    <div class="contenedorPadre">
+        <div class="SeccionBotones1">
+            <button id="boton1">Informacion Personal</button>
+            <a [routerLink]="['/tarjetaCredito']"><button id="boton2">Informacion Direccion</button></a>
+        </div>
+    
+        <div class="contenedorHijo">
+            <div class="container">
+                
+                <div class="main-body">
+                    
+                    <div class="row">
+                        <div class="col-lg-4">
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                                <div class="card h-10">
+                                    <div class="card-body">
+                                        <div class="account-settings">
+                                            <div class="user-profile">
+                                                <div class="d-flex flex-column align-items-center text-center">
+                                                    <img *ngIf="urlImagenPerfil" [src]="urlImagenPerfil" class="imagen-perfil">
+                                                    <div class="small font-italic text-muted mb-4">Esta es tu imagen del perfil
+                                                    </div>
+                                                    <button type="button" class="btn-upload" (click)="fileInput.click()">Cargar Foto perfil</button>
+                                                     <input type="file" style="display: none;" #fileInput (change)="uploadImage($event)">
+                                                </div>
+            
+                                                <hr class="my-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form [formGroup]="formularioPerfil">
+                                      <div class="row mb-3">
+                                          <div class="col-sm-3">
+                                              <h6 class="mb-0">Nombres Completos:</h6>
+                                          </div>
+                                          <div class="col-sm-9 text-secondary">
+                                              <input type="text" class="form-control" formControlName="nombreCompleto" placeholder="{{ infoUsuario.nombreCompleto || 'Nombre Completo' }}">
+                                          </div>
+                                      </div>
+                                      <div class="row mb-3">
+                                          <div class="col-sm-3">
+                                              <h6 class="mb-0">Contraseña:</h6>
+                                          </div>
+                                          <div class="col-sm-9 text-secondary">
+                                              <input type="text" class="form-control" formControlName="contrasena">
+                                          </div>
+                                      </div>
+                                      <div class="row mb-3">
+                                          <div class="col-sm-3">
+                                              <h6 class="mb-0">Email:</h6>
+                                          </div>
+                                          <div class="col-sm-9 text-secondary">
+                                              <input type="text" class="form-control" formControlName="correo">
+                                          </div>
+                                      </div>
+                                      <div class="row mb-3">
+                                          <div class="col-sm-3">
+                                              <h6 class="mb-0">Teléfono:</h6>
+                                          </div>
+                                          <div class="col-sm-9 text-secondary">
+                                              <input type="text" class="form-control" formControlName="telefono">
+                                          </div>
+                                      </div>
+    
+                                      <div class="row">
+                                          <div class="col-sm-9 text-secondary">
+                                              <button class="btn btn-outline-primary" (click)="editarPerfil()">Editar Perfil</button>
+                                          </div>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <div>
+        <app-footer></app-footer>
+    </div>

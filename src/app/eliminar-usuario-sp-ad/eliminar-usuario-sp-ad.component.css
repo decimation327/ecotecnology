@@ -1,0 +1,243 @@
+section{
+  margin-left: 185px;
+}
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: black; /* Color negro para el icono del menú */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+  .menu-options {
+    display: flex;
+    flex-direction: column; /* Alinea las opciones en columna por defecto */
+    align-items: flex-start; /* Alinea las opciones al principio */
+    height: 100%;
+    width: 13%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: width 0.3s;
+  }
+  
+  .menu-options.abreviado {
+    width: 10%;
+  }
+  
+  .menu-options.show-menu {
+    width: 13%;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de la lista en columna */
+    height: 100%; /* Ocupa toda la altura de la página */
+  }
+  
+  /* Aplicar un ancho específico a estas opciones */
+  .menu-options.abreviado li,
+  .menu-options.show-menu li {
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    height: 360px;
+    align-items: center;
+  }
+  
+  /* Ajustes para la última opción */
+  .menu-options.abreviado li:last-child,
+  .menu-options.show-menu li:last-child {
+    border-bottom: none;
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
+  
+
+ /* Estilos para el formulario */
+
+ #principal{
+  background: rgb(14, 111, 156);
+  height: 28vh;
+  margin: auto;
+  overflow: hidden;
+ }
+
+
+.formulario-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  color: black;
+  font-size: 20px;
+  width: 60%;
+  padding: 52px;
+  margin-left: 20%;
+  margin-top: -122px;
+  position: relative;
+  z-index: 1;
+}
+.logo{
+  vertical-align: middle;
+    width: 40vh;
+    margin-top: 5px;
+    margin-bottom: 39px;
+}
+
+.formulario-section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center; /* Modificar esta propiedad */
+  width: 90%;
+}
+
+.form-group {
+  flex: 0;
+  margin-bottom: 1rem;
+  order: 1;
+  padding-top: 0px;
+  width: 100%; /* Cambiar el ancho a 100% */
+  max-width: 450px;  
+  margin-left: 80px;
+   /* Agregar una propiedad max-width */
+}
+
+
+.another-form-group {
+  flex: 1;
+  margin-bottom: 1rem;
+  order: 2;
+  padding-top: 0px;
+  width: 100%;
+  max-width: 450px;
+} 
+
+
+
+
+
+input{
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-pic-container {
+  width: 150px;
+  height: 149px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto -4rem auto;
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  background-color: rgb(14, 111, 156);
+  color: white;
+  font-size: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #28a4d4;
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.tabla-usuarios th, .tabla-usuarios td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabla-usuarios th {
+  background-color: rgb(14, 111, 156);
+  color: white;
+  font-weight: bold;
+}
+
+.tabla-usuarios tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-usuarios tr:hover {
+  background-color: #ddd;
+}
+
+.buscator {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  flex: 1;
+    margin-right: 16px;
+    width: 100%;
+    padding: 10px 218px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #45ce23;
+}
+
+
+.btn-primary.selected {
+  background-color: #28a4d4;
+}
+
+button.limpiar {
+  flex: 1; /* Hace que el botón ocupe todo el espacio disponible */
+  padding: 0 0px;
+}
+
+.selected {
+  background-color: black; /* Color de fondo cuando está seleccionado */
+  color: #fff; /* Color del texto cuando está seleccionado */
+}
+
+.selected i {
+  display: inline-block; /* Mostrar el icono cuando está seleccionado */
+}

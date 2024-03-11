@@ -1,0 +1,126 @@
+<div class="volver">
+  <!-- Botón para volver atrás -->
+  <button (click)="goBack()" class="btn-go-back">
+    <span class="sr-only">Volver</span>
+    <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+    </svg>
+  </button>
+</div>
+
+<section class="todo">
+  <div id="principal"></div>
+
+  <div class="container">
+    <div class="formulario-section">
+      <h1>Agregar Producto</h1>
+      <img class="logo" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg" alt="">
+      <p class="description">En esta interfaz permite agregar nuevos productos al catálogo. <br> La interfaz presenta un formulario dentro de un modal, donde se ingresa la información del producto. Una vez completado el formulario, el producto se añade al catálogo. </p>
+      <button type="button" class="btn-add-product" (click)="abrirModal()">
+        <svg class="icon icon-plus" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+        </svg>
+        Agregar Nuevo Producto
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div *ngIf="mostrarModal" id="myModal" class="modal" (click)="cerrarModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+
+      <div class="headerModal">
+        <h2>Características del Producto</h2>
+      </div>
+
+      <div class="parra2">
+        <p class="text2">Aquí puedes agregar un nuevo producto. Por favor, complete todos los campos obligatorios para agregar un nuevo producto. <br> Ingresa la información requerida en los campos a continuación:</p>
+      </div>
+
+      <form [formGroup]="formProducto" (ngSubmit)="agregarProducto()">
+        
+        <div>
+          <label for="nombreProducto">Nombre del Producto:</label>
+          <input formControlName="nombreProducto" placeholder="Nombre del producto">
+          <div *ngIf="formProducto.get('nombreProducto')?.errors?.['required'] && formProducto.get('nombreProducto')?.touched">
+            El nombre del producto es requerido.
+          </div>         
+        </div>
+        <div>
+          <label for="cantidad">Cantidad:</label>
+          <input formControlName="cantidad" type="number" placeholder="Cantidad">
+          <div *ngIf="formProducto.get('cantidad')?.errors?.['required'] && formProducto.get('cantidad')?.touched">
+            La cantidad es requerida.
+          </div>
+          <div *ngIf="formProducto.get('cantidad')?.errors?.['min'] && formProducto.get('cantidad')?.touched">
+            La cantidad debe ser al menos 1.
+          </div>
+        </div>
+
+        <div>
+          <label for="precio">Precio:</label>
+          <input formControlName="precio" type="number" placeholder="Precio">
+          <div *ngIf="formProducto.get('precio')?.errors?.['required'] && formProducto.get('precio')?.touched">
+            El precio es requerido.
+          </div>
+          <div *ngIf="formProducto.get('precio')?.errors?.['min'] && formProducto.get('precio')?.touched">
+            El precio no puede ser negativo.
+          </div>
+        </div>
+        <div>
+          <label for="marca">Marca:</label>
+          <input formControlName="marca" placeholder="Marca">
+          <div *ngIf="formProducto.get('marca')?.errors?.['required'] && formProducto.get('marca')?.touched">
+            La marca del producto es requerida.
+          </div>
+        </div>
+
+        <div>
+          <label for="categoria">Categoría:</label>
+          <input formControlName="categoria" placeholder="Categoría">
+          <div *ngIf="formProducto.get('categoria')?.errors?.['required'] && formProducto.get('categoria')?.touched">
+            La categoría del producto es requerida.
+          </div>
+        </div>
+
+
+        <div class="activo-section">
+          <label for="activo">Activo:</label>
+          <input type="checkbox" formControlName="activo">
+          <!-- Puesto que es un checkbox, podrías querer manejar la validación de manera diferente -->
+          <div *ngIf="formProducto.get('activo')?.errors?.['required'] && formProducto.get('activo')?.touched">
+            Se debe indicar si el producto está activo.
+          </div>
+        </div>
+         
+
+        <div>
+          <label for="descripcion">Descripción:</label>
+          <textarea formControlName="descripcion" placeholder="Descripción"></textarea>
+          <div *ngIf="formProducto.get('descripcion')?.errors?.['required'] && formProducto.get('descripcion')?.touched">
+            La descripción del producto es requerida.
+          </div>
+        </div>
+        
+
+
+        <div>
+          <label for="urlImagen">subir imagen del producto:</label>
+          <input type="file" (change)="onFileSelected($event)">
+        </div>
+        
+        <!-- Muestra la imagen si hay una URL válida -->
+        <div *ngIf="urlImagen">
+          <img [src]="urlImagen" alt="Imagen Subida">
+        </div>
+        
+          
+        
+
+        <button type="submit">Guardar Producto</button>
+      </form>
+    </div>
+  </div>
+
+</section>

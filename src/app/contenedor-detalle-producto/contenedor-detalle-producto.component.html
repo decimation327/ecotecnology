@@ -1,0 +1,155 @@
+<main>
+    <app-nav-usuario></app-nav-usuario>
+    
+    <div *ngFor="let item of Producto">
+    <div class="container-title">{{item.nombre}}</div>
+    </div>
+    <article *ngFor="let item of Producto">
+    
+        <div class="container-img">
+            <img
+            img [src]="item.img"
+               alt="imagen-producto"
+            />
+        </div>
+        <div class="container-info-product">
+            <div class="container-price">
+                <span>{{item.precio|currency:' COP ' }}</span>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+    
+    
+    
+            <div class="container-add-cart">
+                <div class="container-quantity">
+                    <input
+                        type="number"
+                        placeholder="1"
+                        value="1"
+                        min="1"
+                        class="input-quantity"
+                    />
+                    <div class="btn-increment-decrement">
+                        <i class="fa-solid fa-chevron-up" id="increment"></i>
+                        <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                    </div>
+                </div>
+                <button class="btn-add-to-cart" (click)="showAlert()" (click)="agregarCarrito(item)">
+                    <i class="fa-solid fa-plus" ></i>
+                    Añadir al carrito
+                </button>
+            </div>
+    
+            <div class="container-description">
+                <div class="title-description">
+                    <h4>Descripción</h4>
+    
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-description">
+                    <p>
+                        {{item.descripcion}}
+                    </p>
+                </div>
+            </div>
+    
+            <div class="container-additional-information">
+                <div class="title-additional-information">
+                    <h4>Información adicional</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-additional-information hidden">
+                    <p>{{item.InfoAdic}}</p>
+                </div>
+            </div>
+    
+            <div class="container-reviews">
+                <div class="title-reviews">
+                    <h4>Reseñas</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="text-reviews hidden">
+                    <p>{{item.resena}}</p>
+                </div>
+            </div>
+    
+            <div class="container-social">
+                <span>Compartir</span>
+                <div class="container-buttons-social">
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    
+    </article>
+    <section class="container-related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="card-list-products">
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://www.bginversiones.com/wp-content/uploads/2023/02/PNY-GeForce-RTX-3060-Ti-8GB.jpg"
+                        alt="producto-1"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Tarjeta grafica Geforce rtx 3060</h3>
+                    </div>
+                    <div class="price">2.500.000 $</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://www.computerevolution.com.co/wp-content/uploads/2-20.jpg"
+                        alt="producto-2"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Intel Core i5-10505</h3>
+                        
+                    </div>
+                    <div class="price">600.000 $</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://teknopolis.vteximg.com.br/arquivos/ids/193409-500-500/18710-1.jpg?v=637418503859630000"
+                        alt="producto-3"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Mouse Logitech G203</h3>
+                        
+                    </div>
+                    <div class="price">100.000 $</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img
+                        src="https://altagamadigital.com/wp-content/uploads/2022/05/SO-DIMM-de-Ram-DDR-4-DIMM-16GB-pc25600-3200MHz-firma-Patriot-psd416g32002s-al-por-menor.jpg_Q90.jpg_.jpg"
+                        alt="producto-4"
+                    />
+                </div>
+                <div class="info-card">
+                    <div class="text-product">
+                        <h3>Ram 16gb 3200mh ddr4</h3>
+                        
+                    </div>
+                    <div class="price">120.000 $</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <app-footer></app-footer>
+    </main>

@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: -7px;
+}
+
+main {
+  background-color: white;
+  margin: 0 auto;
+  width: 1900px;
+  border: 0.1px solid grey;
+}
+

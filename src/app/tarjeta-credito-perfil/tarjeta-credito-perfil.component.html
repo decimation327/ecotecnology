@@ -1,0 +1,93 @@
+<div>
+    <div>
+        <app-nav-usuario></app-nav-usuario>
+    </div>
+</div>
+
+
+<div class="volver">
+    <!-- Botón para volver atrás -->
+    <button (click)="goBack()" class="btn-go-back">
+    <span class="sr-only">Volver</span>
+    <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+    </svg>
+    </button>
+</div>
+
+
+<div class="contenedorPadre">
+    <div class="SeccionBotones1">
+        <button id="boton1" [routerLink]="['/perfilUser']">Informacion Personal</button>
+        <a><button id="boton2">Informacion Direccion</button></a>
+    </div>
+
+    <div class="contenedorHijo">
+        <div class="container">
+            <div class="row gutters">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <img *ngIf="urlImagenPerfil" [src]="urlImagenPerfil" class="imagen-perfil" alt="Vista previa de la imagen de perfil">
+                                        <div class="small font-italic text-muted mb-4" >Esta es tu imagen del perfil
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                      <label for="fullName">Barrio:</label>
+                                      <input type="text" class="form-control" id="fullName"  [placeholder]="barrio" [(ngModel)]="barrio">
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                      <label for="eMail">Municipio:</label>
+                                      <input type="text" class="form-control" id="eMail"  [placeholder]="municipio" [(ngModel)]="municipio" >
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                      <label for="phone">Direccion Completa:</label>
+                                      <input type="text" class="form-control" id="phone"  [placeholder]="direccionCompleta" [(ngModel)]="direccionCompleta">
+                                    </div>
+                                  </div>
+                                  
+                                <div class="row">
+                                    <div class="col-sm-9 text-secondary">
+                                        <button class="btn btn-outline-primary" (click)="actualizarDireccionExistente()">Editar
+                                            Direccion</button>
+                                        <button class="btn btn-outline-primary" (click)="guardarDireccion()">Guardar
+                                            Direccion</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+    </div>
+</div>
+<br>
+<div>
+    <app-footer></app-footer>
+</div>

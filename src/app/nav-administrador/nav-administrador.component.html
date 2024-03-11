@@ -1,0 +1,93 @@
+
+<div id="principal">
+    <div id="sliderPrincipal">
+        <p id="nombre"><b> Transforma tu vieja electrónica en oportunidades nuevas. Envía tus componentes dañados a Ecotecnology y únete a nuestra misión de reutilizar y reducir residuos electrónicos. ¡Compra con propósito, compra en Ecotecnologi!.
+        </b></p>
+        <p id="nombre"><b>
+            ¡Pero espera, hay más! Explora nuestro catálogo completo en ecotechnology.com y descubre descuentos exclusivos en una amplia gama de productos electrónicos. ¡No te pierdas las ofertas de Ecotechnology, donde la innovación y el ahorro se encuentran!
+        </b>
+
+        </p>
+    </div>
+        
+</div>
+
+<div class="clear"></div>
+<hr>
+
+  
+  
+  
+<img class="logo" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg" alt="">
+
+
+<div class="container">
+    <!-- Añade (ngSubmit) para manejar el envío del formulario y utiliza [(ngModel)] para enlazar el campo de entrada -->
+    <form  class="search-bar" (submit)="$event.preventDefault()">
+        <input class="input" type="text" placeholder="Buscar" name="q" [(ngModel)]="terminoDeBusqueda" (ngModelChange)="buscarProductos($event)" required>
+        <button type="submit">
+            <img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838964/busqueda_t2piuj.png" alt="" width="65px">
+        </button>
+        
+    </form>
+    
+</div>
+<div class="clear"></div>
+<div class="buscadorproductos">
+    <div *ngFor="let producto of productosEncontrados">
+      <img [src]="producto.urlImagen" alt="" class="imgProd">
+      <span>{{ producto.nombrePro }}</span>
+    </div>
+  </div>
+
+<div class="clear"></div>
+    <a [routerLink]="[ '/Agenda-Usuario']"><img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838966/reciclajep_n6fepf.jpg" alt="" id="reciclaje"></a>
+<div class="clear"></div>        
+<a [routerLink]="[ '/Agenda-Usuario']"></a>
+
+<div class="clear"></div>
+
+<header id="carrito">
+    <button id="boton-carrito" (click)="openVerticalModal()"><img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838964/carrito_de_compras_ztdwgy.png" alt="" width="65px"><span
+            id="contadorCarrito">{{ cantidadProductosEnCarrito}}</span></button>
+</header>
+
+
+  <div class="modal-contenedor">
+    <div class="modal-carrito">
+        <h3>Carrito</h3>
+        <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+        <div id="carrito-contenedor">
+        </div>
+        <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+        <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+        <button><a href="./pago.html" id="comprar">Comprar</a></button>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+<!-- Si existe usuario.imagenPerfil, mostrar esta imagen -->
+<img *ngIf="usuario?.imagenPerfil" [src]="usuario.imagenPerfil" id="login">
+
+<!-- Si no existe usuario.imagenPerfil, mostrar imagen predeterminada -->
+<img *ngIf="!usuario?.imagenPerfil" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/log_in_newvip.png"  id="login">
+
+<div class="clear"></div>
+
+
+<div id="cerrar">
+    <ul class="cseccion">
+        <li><a [routerLink]="[ '/Administrador']"  id="ccuadro"></a>
+        <ul>
+            <li><a [routerLink]="[ '/Administrador']">inicio</a></li>
+            <li><a [routerLink]="[ '/perfilUser']">Perfil</a></li>
+            <li><a [routerLink]="[ '/CangearPuntos']">Canjear Puntos</a></li>          
+            <li><a [routerLink]="[ '/Almacen']">Almacen</a></li>
+            <li><a [routerLink]="[ '/agregarPuntos']">Agregar Puntos</a></li>
+            <li><a [routerLink]="[ '/Agenda-Administrador']">Gestion Citas</a></li>
+            <li><a (click)="confirmarCerrarSesion()">Cerrar sesión</a></li>
+        </ul>
+    </li>
+    </ul>
+</div>

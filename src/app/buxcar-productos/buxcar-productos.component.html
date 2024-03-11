@@ -1,0 +1,135 @@
+<div class="volver">
+    <!-- Botón para volver atrás -->
+    <button (click)="goBack()" class="btn-go-back">
+    <span class="sr-only">Volver</span>
+    <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+    </svg>
+    </button>
+</div>
+
+
+<main>
+    <app-nav-administrador></app-nav-administrador>
+
+    <div class="volver">
+        <!-- Botón para volver atrás -->
+        <button (click)="goBack()" class="btn-go-back">
+        <span class="sr-only">Volver</span>
+        <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+        </svg>
+        </button>
+    </div>
+
+
+    
+    <div class="contenedor-principal">
+        <div class="filtros-container">
+            <div class="filtro-categorias">
+                <h2>Filtrar por Categorías</h2>
+                <select [(ngModel)]="categoriaSeleccionada" (change)="actualizarTitulo()">
+                  <option value="todos">Todos los Productos</option>
+                  <option value="computadores">Computadores</option>
+                  <option value="pantallas">Pantallas</option>
+                  <option value="chasis">Chasis</option>
+                  <option value="perifericos">Periféricos</option>
+                  <option value="sillas Gaming">Sillas Gaming</option>
+                </select>
+              </div>
+    
+    
+                    <!-- Filtro de Marcas -->
+              <div class="filtro">
+                <h3>Marca</h3>
+                <select [(ngModel)]="marcaSeleccionada" (change)="filtrarPorMarca()">
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option value="marcaA">Marca A</option>
+                  <option value="marcaB">Marca B</option>
+                  <option value="marcaC">Marca C</option>
+                  <!-- Añade más marcas según sea necesario -->
+                </select>
+              </div>
+
+        </div>
+        
+          
+
+
+        <section class="cards">
+            <h2>{{ tituloProductos }}</h2>
+
+
+            <div class="filtro-ordenacion">
+                <label for="ordenarPor">Ordenar por:</label>
+                <select id="ordenarPor" [(ngModel)]="ordenSeleccionado" (change)="ordenarProductos()" >
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option value="seleccionar">Seleccionar</option>
+                  <option value="menorPrecio">Menor Precio</option>
+                  <option value="mayorPrecio">Mayor Precio</option>
+                  <option value="masVendidos">Más vendidos</option>
+                  <option value="mejoresCalificados">Mejores Calificados</option>
+                  <option value="aZ">A - Z</option>
+                  <option value="zA">Z - A</option>
+                </select>
+              </div>              
+              
+
+  
+          <div class="container"></div>
+            <div class="contenedorCards">
+              <div  class="producto">
+                <div class="innerProd">
+
+                  <div class="imgWrapper">
+                    <img  alt="" class="imgProd">
+                  </div>
+
+                  <a class="info">
+                    <h3 class="prodName"></h3>
+                    <p class="prodDesc">HyperX Alloy Origins mecánico Tenkeyless para Gaming RGB</p>
+
+                    <div class="precios">
+                      <p class="precio" id="precio"></p>
+                        <div>
+                            <p class="precioOriginal">
+                                "5000"
+                            </p>
+                            <p class="stock">
+                                "En existencia"
+                            </p>
+                        </div>
+                    </div>
+                  </a>
+                    <div class="actions">
+
+                        <div class="boton alCarrito">Agregar al Carrito</div>
+                            <button class="Detalle"><a >Ver Detalle</a></button>
+          
+                            <div class="row-buttons">
+                                <div class="checkBox comparar">
+                                    <input type="checkbox">
+                                    <div class="icon">
+          
+                                    </div>
+                                    <p class="checkBoxLabel">Comprar</p>
+                                </div>
+                                <div class="aFavs favoritos">
+                                    <div class="icono">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                                            <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <app-footer></app-footer>
+</main>
