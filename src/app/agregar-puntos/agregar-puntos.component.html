@@ -1,0 +1,44 @@
+<section>
+
+  <div class="volver">
+    <!-- Botón para volver atrás -->
+    <button (click)="goBack()" class="btn-go-back">
+      <span class="sr-only">Volver</span>
+      <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="principal"></div>
+
+  <div class="formulario-section">
+    <h1>Agregar Puntos</h1>
+
+    <img class="logo" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg" alt="">
+
+    <!-- Enlaza el formulario y maneja el evento de envío -->
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="totalPuntos">Total puntos:</label>
+          <!-- Enlaza el campo totalPuntos con el formulario -->
+          <input type="number" id="totalPuntos" name="totalPuntos" formControlName="totalPuntos" required>
+        </div>
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre Usuario:</label>
+          <!-- Enlaza el campo nombreUsuario con el formulario -->
+          <input type="text" id="nombreUsuario" name="nombreUsuario" formControlName="nombreUsuario" required>
+        </div>
+      </div>
+
+      <div class="botones">
+        <button type="submit" class="btnF">Guardar Puntos</button>
+      </div>
+    </form>
+  </div>
+
+
+
+</section>

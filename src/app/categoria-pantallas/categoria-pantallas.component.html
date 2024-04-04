@@ -1,0 +1,113 @@
+
+
+<div *ngIf="rolUsuario === 'UsuarioAdministrador'">
+    <app-nav-administrador></app-nav-administrador>
+  </div>
+  
+  <div *ngIf="rolUsuario === 'Usuario'">
+    <app-nav-usuario></app-nav-usuario>
+  </div>
+  
+  <div *ngIf="!rolUsuario">
+    <app-nav></app-nav>
+  </div>
+
+<div class="volver">
+    <!-- Botón para volver atrás -->
+    <button (click)="goBack()" class="btn-go-back">
+      <span class="sr-only">Volver</span>
+      <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+      </svg>
+    </button>
+  </div>
+  
+  
+  
+  
+  <div id="header">
+    <ul class="nav">
+      <li><a  class="htitulos" [routerLink]=" ['/Pantallas'] ">Pantallas</a>
+
+
+      <li><a  class="htitulos" [routerLink]="['/CategoriaChasis']" >chasís</a>
+
+
+      <li><a  class="htitulos" [routerLink]="['/Perifericos']">Perifericos</a>
+
+        
+      <li><a  class="htitulos" [routerLink]=" ['/CategoriaSillas'] ">Sillas</a>
+    </ul>
+  
+  </div>
+  
+  <div class="descripcion-tecnologia">
+    <div class="titulo-y-selector">
+      <h1>Pantallas</h1>
+      <div class="selector-marca">
+        <select (change)="cargarProductosPorMarca($any($event.target).value)">
+          <option value="">Selecciona una marca</option>
+          <option *ngFor="let marca of marcasUnicas" [value]="marca">{{ marca }}</option>
+        </select>
+      </div>
+    </div>
+    <p class="descripcion">En EcoTecnology, puedes explorar nuestra amplia gama de periféricos, diseñados para mejorar tu experiencia de computación y brindarte la funcionalidad que necesitas para trabajar, jugar y comunicarte con eficiencia y comodidad. Desde dispositivos de entrada que capturan tus comandos, hasta soluciones de salida que te permiten experimentar el resultado de tus acciones digitales, tenemos todo lo que necesitas para completar tu configuración tecnológica.</p>
+  </div>
+  
+  
+  
+  
+  
+  <section class="cards">
+    
+      <div class="container"></div>
+      <div class="contenedorCards">
+        <div *ngFor="let producto of productosFiltrados" class="producto">
+          <div class="innerProd">
+            <div class="imgWrapper">
+              <img [src]="producto.urlImagen" alt="" class="imgProd">
+            </div>
+            <a class="info">
+              <h3 class="prodName">{{producto.nombrePro}}</h3>
+              <p class="prodDesc">Productos de ultima generacion</p>
+              <div class="precios">
+                  <p class="precio" id="precio">${{ producto.precioPro | currency:'COP':'symbol':'1.0-0' }} </p>
+                  <div>
+                    <p class="precioOriginal">
+                      "5000"
+                    </p>
+                    <p class="stock">
+                      "En stock"
+                    </p>
+                  </div>
+              </div>
+            </a>
+              <div class="actions">
+                <div class="boton alCarrito">Agregar al Carrito</div>
+                <button class="Detalle"><a [routerLink]="['/Producto', producto.idPro]" id="vermasPro">Ver Detalle</a></button>
+    
+                  <div class="row-buttons">
+                    <div class="checkBox comparar">
+                      <input type="checkbox">
+                      <div class="icon">
+    
+                      </div>
+                      <p class="checkBoxLabel">Comprar</p>
+                    </div>
+                    <div class="aFavs favoritos">
+                      <div class="icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                          <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  
+    
+  <app-footer></app-footer>
+  

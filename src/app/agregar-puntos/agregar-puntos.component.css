@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/* app.component.css */
+  
+
+  section{
+    margin-left: 185px;
+  }
+  
+  
+
+  .btn-go-back {
+    /* Agrega sombra al botón */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 9999;
+  }
+  
+  .btn-go-back:hover {
+    transform: scale(1.1);
+    background-color: rgb(255, 255, 255);
+    color: rgb(14, 111, 156);
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Agrega más sombra al hover */
+  }
+  
+  .btn-go-back:active {
+    transform: scale(0.9);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Agrega sombra al pulseo */
+  }
+  
+  .icon-arrow-left {
+    fill: #333;
+    width: 44px;
+    height: 44px;
+    transform: rotateY(180deg);
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  
+
+
+  
+   /* Estilos para el formulario */
+  
+   #principal{
+    background: rgb(14, 111, 156);
+    height: 28vh;
+    margin: auto;
+    overflow: hidden;
+   }
+  
+  
+  .formulario-section {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  color: black; 
+  width: 60%; /* Cambiado a un valor más flexible */
+  padding: 55px;
+  margin-left: 20%;
+  margin-top: -120px;
+  position: relative;
+  z-index: 1;
+  }
+  
+  .formulario-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .form-row {
+    display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si no caben en una sola línea */
+  margin-top: 1rem; /* Añade un espacio superior */
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    padding-top: 0px;
+    width: calc(50% - 20px); /* Ajusta el ancho de cada grupo para que ocupe casi la mitad del contenedor */
+    max-width: 280px; /* Limita el ancho máximo para que se vea bien en dispositivos más anchos */
+    margin-left: 25px; /* Espaciado entre los grupos */
+    background-color: rgba(14, 111, 156, 0.796);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white; /* Color del texto */
+  }
+  .form-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  .form-group input:focus {
+    border-color: #45ce23; /* Color del borde al enfocar */
+    outline: none; /* Quita el contorno al enfocar */
+  }
+  
+  
+  .another-form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+    order: 2;
+    padding-top: 0px;
+    width: 100%;
+    max-width: 450px;
+  } 
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .formulario-section .form-control {
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+   
+  }
+  
+  
+  
+  .formulario-section .form-control:hover {
+    border-color: #45ce23;
+    cursor: pointer;
+  }
+  
+  input{
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .profile-pic-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 2rem auto;
+  }
+  
+  .profile-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  button {
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    background-color: #45ce23;
+    color: white;
+    font-size: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #1d75b8;
+  }
+  font-family: sans-serif;
+}
+
+body {
+  font-size: 16px;
+  color: #333;
+  background-color: #f3f3f3;
+}
+
+.citas {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altura mínima para centrado vertical */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #008000; /* Verde como color principal */
+}
+
+.busca {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.buscador, .fechas, .report {
+  display: flex;
+  align-items: center;
+}
+
+.buscador input,
+.fechas input {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 15px;
+
+}
+
+.buscador .btn,
+.fechas .btn,
+.report .btn {
+  border: none;
+  background-color: #fff;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #008000; /* Verde para botones */
+}
+
+.report .btn:hover {
+  background-color: #f0f0f0;
+}
+
+
+.btn {
+  font-size: 16px;
+  border: none;
+  background-color: #fff;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #008000; /* Verde para botones */
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .formulario-section {
+    width: 90%; /* Cambiar el ancho para adaptarse mejor a pantallas más pequeñas */
+    margin-left: 5%; /* Ajustar el margen izquierdo */
+    margin-top: 0; /* Eliminar el margen superior */
+    padding: 30px; /* Reducir el relleno */
+  }
+
+  .form-group {
+    width: calc(100% - 20px); /* Ajustar el ancho al 100% del contenedor */
+    max-width: 100%; /* Hacer que el ancho máximo sea del 100% */
+    margin-left: 0; /* Eliminar el margen izquierdo */
+    margin-bottom: 20px; /* Añadir un margen inferior */
+  }
+
+  .formulario-section .form-control {
+    font-size: 16px; /* Reducir el tamaño del texto del input */
+    height: 40px; /* Reducir la altura del input */
+    padding: 8px; /* Reducir el relleno del input */
+  }
+
+  .formulario-section h1 {
+    font-size: 2rem; /* Reducir el tamaño del título */
+    margin-bottom: 1.5rem; /* Reducir el margen inferior del título */
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 375px) and (max-height: 667px) {
+  section {
+    margin-left: 0;
+  }
+
+  .btn-go-back {
+    top: 15px;
+    left: 15px;
+  }
+
+  .icon-arrow-left {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo {
+    max-width: 80%; /* Establece un ancho máximo para la imagen */
+    height: auto;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+
+  #principal {
+    height: 20vh;
+  }
+
+  .formulario-section {
+    height: 50vh;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  .formulario-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .formulario-section .form-control {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 0.4rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

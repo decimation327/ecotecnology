@@ -1,0 +1,176 @@
+.btn-go-back {
+    /* Agrega sombra al botón */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 9999;
+  }
+  
+  .btn-go-back:hover {
+    transform: scale(1.1);
+    background-color: rgb(14, 111, 156);
+    color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Agrega más sombra al hover */
+  }
+  
+  .btn-go-back:active {
+    transform: scale(0.9);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Agrega sombra al pulseo */
+  }
+  
+  .icon-arrow-left {
+    fill: #333;
+    width: 44px;
+    height: 44px;
+    transform: rotateY(180deg);
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+
+
+
+
+
+.contenedor{
+    margin:3vh 34vh 14vh 34vh;
+    padding: 7vh 7vh 7vh 7vh ;
+    border: 5px  rgb(14, 111, 156) solid;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*#contenedorHijo{
+    margin:auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+/*contenido completo párrafo primer parrrafo*/
+
+.primerParrafo {
+    padding: 0vh 0vh 4vh 0vh ;
+}
+.primerParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo segundo parrrafo*/
+
+.segundoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.segundoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo tercer parrrafo*/
+
+.tercerParrafo{
+    padding: 4vh 0vh 3vh 0vh ;
+}
+.tercerParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo cuarto parrrafo*/
+
+.cuartoParrafo{
+    padding: 4vh 0vh 3vh 0vh ;
+}
+.cuartoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo quinto parrrafo*/
+
+.quintoParrafo{
+    padding: 4vh 0vh 3vh 0vh ;
+}
+.quintoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo sexto parrrafo*/
+
+.sextoParrafo{
+    padding: 4vh 0vh 3vh 0vh ;
+}
+.sextoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo septimo parrrafo*/
+
+.septimoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.septimoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+/*contenido completo párrafo octavo parrrafo*/
+
+.octavoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.octavoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo noveno parrrafo*/
+
+.novenoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.novenoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo decimo parrrafo*/
+
+.decimoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.decimoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo onceavo parrrafo*/
+
+.onceavoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.onceavoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}
+
+/*contenido completo párrafo doceavo parrrafo*/
+
+.doceavoParrafo{
+    padding: 4vh 0vh 4vh 0vh ;
+}
+.doceavoParrafo h2{
+    padding: 0vh 0vh 2vh 0vh ;
+}

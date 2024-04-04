@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+.imagen-perfil {
+    width: 120px; /* Ajuste el tamaño según sea necesario */
+    height: 120px; /* Mantén un aspecto cuadrado para la consistencia */
+    border-radius: 50%; /* Esencial para la forma circular */
+    object-fit: cover; /* Importante para manejar imágenes de diferentes aspectos */
+    border: 4px solid #fff; /* Un borde sólido para destacar la imagen sobre fondos variados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Una sombra sutil para añadir profundidad */
+    display: block; /* Cambia a block para centrar más fácilmente si es necesario */
+    margin: 20px auto; /* Centra la imagen si el contenedor lo permite */
+    margin-bottom: 10px; 
+}
+
+  
+#principal{
+    background: rgb(14, 111, 156);
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.logo{
+    margin: 39px 12px 0px 87px;
+    float: left;
+    width: 262px;
+}
+#principal {
+    overflow: hidden;
+}
+
+#sliderPrincipal {
+    white-space: nowrap;
+    transform: 0.5s ease-in-out;
+    animation: scroll 60s linear infinite;
+    -webkit-animation: scroll 60s linear infinite;
+    
+}
+
+#nombre {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+@keyframes scroll {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    50% {
+        transform:translateX(-100%);
+    }
+    75% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide{
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+}
+@keyframes nombreanimacion {
+    0% {color: #3cff00; left: -700px; top: 0px;}
+    25%{color: #3cff00; left: -500px;}
+    50% {color: #3cff00; left: -300px;}
+    75%{color: #3cff00; left: -200px;}
+    100% {color: #3cff00; left: 0;}
+}
+
+
+
+body {
+    margin: -9px;
+    height: 100.9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #6615ac;
+    width: 202vh;
+}
+
+.container-form {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition:  all .5s ease-out;
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 50px;
+}
+
+.message {
+    height: 60%;
+    width: 569px;
+    border-radius: 60px ;
+    background-image: url('https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* La imagen de fondo se ajustará para cubrir todo el contenedor */
+    background-position: center; /* La imagen de fondo se posicionará en el centro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+}
+
+
+.message h2 {
+    font-size: 2.4rem;
+    font-weight: 550; /* Aumenta el grosor de la letra */
+    padding: .0rem 0;
+    margin-top: -25px;
+    color: #191919;
+}
+
+
+
+.message p {
+    font-size: 1.5em;
+    font-weight: 500; /* Aumenta el grosor de la letra */
+    color: #000000;
+    margin-top: 437px;
+    margin-left: -30px;
+}
+
+.message button {
+    padding: 1.0rem;
+    font-weight: 1000;
+    background-color: rgb(66, 181, 44);
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover {
+    background-color: #1563ac;
+}
+
+.formulario {
+    width: 400px;
+    height: 600px;
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 100px;
+    margin-left: 300px;
+    background-color: #7cbeb330;
+    backdrop-filter: blur(3px);
+    border-radius: 50px;
+    text-align: center;
+    color:rgb(45, 196, 28);
+    border: 0.1rem solid rgb(178, 178, 178);
+}
+
+.create-account {
+    padding: 0.8rem 0;
+    font-size: 1.7rem;
+}
+#tituloIniciarSesion{
+    padding-top: 70px;
+}
+
+.iconos {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    color: #1563ac;
+}
+
+.border-icon {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin rgb(201, 201, 201);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.cuenta-gratis {
+    padding: 2rem 0;
+}
+
+.formulario input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: rgb(57, 212, 34) thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: rgb(0, 0, 0);
+}
+
+.formulario input[type="submit"] {
+    width: 60%;
+    margin: auto;
+    border: solid thin blue ;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: rgb(44, 139, 25);
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #c71515;
+}
+
+.sign-in {
+    position: absolute;
+
+
+    
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+::placeholder{
+    color: rgb(0, 0, 0);
+}
+.btnF{
+    width: 60%;
+    
+    border: solid thin rgb(72, 72, 72);
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: rgb(55, 172, 31);
+    font-weight: 600;
+    margin-top: 3rem;
+    margin: auto;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+}
+.btn-upload {
+    background-color: rgb(44, 139, 25); /* Ajuste según tu esquema de color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-upload:hover {
+    background-color: rgb(55, 172, 31); /* Ajuste para hover */
+}
+
+select{
+    background-color: #000000;
+    color: #fff;
+}
+  
+  /* Estilos para las opciones */
+select option {
+    background-color: #000000;
+    color: #fff;
+ }
+  
+  /* Estilos para la opción seleccionada */
+  select option:checked {
+    background-color: #000000;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .input-with-toggle {
+    position: relative;
+  }
+  
+  .toggle-icon {
+    position: absolute;
+    right: 5px; /* Ajusta la posición del icono */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .eye {
+    width: 20px;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    right: 55px;
+    position: relative;
+  }
+  
+  .eye:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .toggle-icon.mostrar .eye:before {
+    background-color: #00f; /* Cambia el color del ojo cuando se muestra la contraseña */
+  }

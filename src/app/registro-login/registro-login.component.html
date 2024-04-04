@@ -1,0 +1,74 @@
+<div id="principal">
+  <div id="sliderPrincipal">
+      <p id="nombre"><b> Transforma tu vieja electrónica en oportunidades nuevas. Envía tus componentes dañados a Ecotecnology y únete a nuestra misión de reutilizar y reducir residuos electrónicos. ¡Compra con propósito, compra en Ecotecnology!
+      </b></p>
+      <p id="nombre"><b>
+          ¡Pero espera, hay más! Explora nuestro catálogo completo en ecotecnology.com y descubre descuentos exclusivos en una amplia gama de productos electrónicos. ¡No te pierdas las ofertas de Ecotechnology, donde la innovación y el ahorro se encuentran!
+      </b>
+      
+      </p>
+  </div>
+      
+</div>
+<body>
+
+  <div class="container-form sign-up" [class.active]="isSignInActive">
+    <div class="welcome-back">
+      <div class="message">
+        <h2>Bienvenido a Ecotecnology</h2>
+        <p>Si ya tienes una cuenta por favor inicia sesión aquí</p>
+        <button class="sign-in-btn" (click)="showSignInForm()">Iniciar Sesión</button>
+      </div>
+    </div>
+    <form class="formulario" [formGroup]="registroForm" (ngSubmit)="registrarUsuario()">
+      <h2 class="create-account">Crear una cuenta</h2>
+      
+      <p class="cuenta-gratis">Crear una cuenta gratis</p>
+      <input type="text" placeholder="Nombre Completo" formControlName="nombreCompleto">
+      <div class="input-with-toggle">
+        <input [type]="mostrarContrasena ? 'text' : 'password'" id="password" name="password" placeholder="Contraseña" formControlName="contrasena" required>
+        <span (click)="toggleMostrarContrasena()" class="toggle-icon" [ngClass]="{'mostrar': mostrarContrasena}">
+            <div class="eye"></div>
+        </span>
+    </div>
+    
+      <input type="email" placeholder="Correo" formControlName="correo">
+      <input type="text" placeholder="Telefono" formControlName="telefono">
+      <!-- Campo de entrada de archivo para seleccionar la imagen -->
+      <!-- Input de archivo para seleccionar la imagen -->
+      
+      <button type="button" class="btn-upload" (click)="fileInput.click()">Cargar Foto perfil</button>
+      <!-- Input de archivo oculto -->
+      <input type="file" style="display: none;" #fileInput (change)="uploadImage($event)">
+   
+
+      <img *ngIf="urlImagenPerfil" [src]="urlImagenPerfil" class="imagen-perfil" alt="Vista previa de la imagen de perfil">
+
+      
+      <button type="submit" class="btnF" [disabled]="isLoadingImage || !registroForm.valid">Registrarse</button>
+    </form>
+  </div> <!-- Cierra el contenedor de registro -->
+
+  <div class="container-form sign-in" [class.active]="isSignInActive">
+    <form class="formulario" [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
+      <h2 class="create-account" id="tituloIniciarSesion">Iniciar Sesión</h2>
+      <p class="cuenta-gratis">¿Aún no tienes una cuenta?</p>
+      <input type="email" placeholder="Email" formControlName="correo">
+      <div class="input-with-toggle">
+        <input [type]="mostrarContrasena ? 'text' : 'password'" id="password" name="password" placeholder="Contraseña" formControlName="contrasena" required>
+        <span (click)="toggleMostrarContrasena()" class="toggle-icon" [ngClass]="{'mostrar': mostrarContrasena}">
+            <div class="eye"></div>
+        </span>
+    </div>
+      <button type="submit" class="btnF">Iniciar Sesión</button>
+    </form>
+    <div class="welcome-back">
+      <div class="message">
+        <h2>Bienvenido a Ecotecnology</h2>
+        <p>Si aún no tienes una cuenta por favor regístrate aquí</p>
+        <button class="sign-in-btn" (click)="toggleSignInUp('signUp')">Registrarse</button>
+      </div>
+    </div>
+  </div> <!-- Cierra el contenedor de inicio de sesión -->
+
+</body>
