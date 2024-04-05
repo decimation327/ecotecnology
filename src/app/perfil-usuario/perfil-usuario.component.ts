@@ -27,6 +27,7 @@ export class PerfilUsuarioComponent implements OnInit{
   formularioPerfil: FormGroup;
   nombreUsuario: any 
   infoUsuario: any = {};
+  rolUsuario: any;
 
   constructor(
     private location: Location,
@@ -52,6 +53,7 @@ export class PerfilUsuarioComponent implements OnInit{
     });
   }
   ngOnInit() {
+    this.rolUsuario = this.authService.getrol();  
     this.nombreUsuario = this.authService.getNombreUsuario();
     if (this.nombreUsuario) {
       this.cargarInformacionUsuarioPorNombre(this.nombreUsuario);
@@ -189,5 +191,7 @@ export class PerfilUsuarioComponent implements OnInit{
   obtenerInformacionUsuarioPorNombre(nombreCompleto: string): Observable<any> {
     return this.backendService.obtenerInformacionUsuarioPorNombre(nombreCompleto);
   }
+  
+}
   
 }
