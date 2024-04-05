@@ -115,6 +115,11 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
           icon: 'success',
           title: 'Cita exitosa',
           text: 'La cita se ha insertado correctamente.'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Actualizar la página
+            location.reload();
+          }
         });
         console.log('Eventos después de insertar:', this.events);
 
@@ -138,8 +143,7 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          text: "Error al insertar la cita",
         });
       }
     );
