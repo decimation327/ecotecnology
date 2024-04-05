@@ -91,7 +91,11 @@
           </td>
           <td><span class="status"></span>{{ cita.disponible }}</td>
           <td>{{ cita.nombreUsuario }}</td>
+<<<<<<< HEAD
           <td>{{ cita.telefono || cita.telefonoUsuario }}</td>
+=======
+          <td>{{ cita.telefono }}</td>
+>>>>>>> responsive-st
           <td>{{ cita.horaCita }}</td>
           <td>{{ cita.fechaCita | date: 'dd/MM/yyyy' }}</td>
           <td>{{ cita.cantidad }}</td>
@@ -145,16 +149,26 @@
       <!-- Aquí empieza el formulario -->
       <form>
         <div class="modal-explanation">
+<<<<<<< HEAD
           <p>Este modal permite la actualización del estado de las citas, ofreciendo opciones como 'Aceptado', 'Cancelado' y 'En curso'. Selecciona el nuevo estado y confírmalo con 'Guardar Cambios' para actualizar la base de datos.<br> Usa 'Cancelar' para cerrar el modal sin aplicar modificaciones.</p>
+=======
+          <p>Este modal permite la actualización del estado de las citas, ofreciendo opciones como 'Disponible', 'Cancelado' y 'En curso'. Selecciona el nuevo estado y confírmalo con 'Guardar Cambios' para actualizar la base de datos.<br> Usa 'Cancelar' para cerrar el modal sin aplicar modificaciones.</p>
+>>>>>>> responsive-st
         </div>
 
         <div class="input-group">
           <label for="status">Estado:</label>
           
           <select id="status" name="status" required [(ngModel)]="selectedState">
+<<<<<<< HEAD
             <option value="Aceptado">Aceptado</option>
             <option value="Cancelado">Cancelado</option>
             <option value="Pendiente">Pendiente</option>
+=======
+            <option value="Disponible">Disponible</option>
+            <option value="Cancelado">Cancelado</option>
+            <option value="En curso">Pendiente</option>
+>>>>>>> responsive-st
           </select>          
         </div>
         <button type="submit" class="save-button" (click)="guardarCambiosEstado(selectedState)">Guardar Cambios</button>
