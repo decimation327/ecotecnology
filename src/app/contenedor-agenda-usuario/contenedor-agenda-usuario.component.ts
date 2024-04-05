@@ -128,7 +128,8 @@ onUnderstoodClick() {
         const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
         closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
 
-        // No es necesario recargar la página
+        // Recargar la página
+        location.reload();
       });
 
       console.log('Eventos después de insertar:', this.events);
@@ -146,6 +147,7 @@ onUnderstoodClick() {
     }
   );
 }
+
 
   
   imageSrc: string | ArrayBuffer | null = null;
