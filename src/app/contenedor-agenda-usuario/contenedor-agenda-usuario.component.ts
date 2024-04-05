@@ -72,7 +72,7 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
     }
   }
 
-  onUnderstoodClick() {
+onUnderstoodClick() {
   // Verificar si se ha seleccionado una fecha y hora
   if (!this.selectedDate || !this.selectedTime) {
     alert("Por favor selecciona una fecha y hora.");
@@ -107,25 +107,31 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
         title: `${cita.NomComponet} - Estado: ${cita.EstadoComponente} - Cantidad: ${cita.Cantidad}`,
         start: `${cita.FechaCita}T${cita.HoraCita}`
       };
-      this.events = [...this.events, newEvent]; // Actualizar el arreglo 'events'
+
+      // Actualizar 'events' con el nuevo arreglo que incluye el nuevo evento
+      this.events = [...this.events, newEvent];
 
       // Mostrar alerta de éxito con SweetAlert
       Swal.fire({
         icon: 'success',
         title: 'Cita exitosa',
         text: 'La cita se ha insertado correctamente.'
+      }).then((result) => {
+        // Limpiar los campos después de agregar el evento y confirmar la inserción
+        this.selectedDate = '';
+        this.selectedTime = '';
+        this.componentName = '';
+        this.EstadoComponente = '';
+        this.Cantidad = '';
+        this.cloudinaryImageUrl = '';
+
+        const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
+        closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
+
+        // No es necesario recargar la página
       });
 
-      // Limpiar los campos después de agregar el evento y confirmar la inserción
-      this.selectedDate = '';
-      this.selectedTime = '';
-      this.componentName = '';
-      this.EstadoComponente = '';
-      this.Cantidad = '';
-      this.cloudinaryImageUrl = '';
-
-      const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
-      closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
+      console.log('Eventos después de insertar:', this.events);
 
     },
     (error) => {
@@ -135,79 +141,12 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "¡Algo salió mal!",
-        footer: '<a href="#">¿Por qué tengo este problema?</a>'
+        text: "Error al insertar la cita",
       });
     }
   );
 }
 
-    (error) => {
-      console.error('Error al insertar la cita:', error);
-      // Podrías mostrar una alerta u otra acción si la inserción falla
-
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-        footer: '<a href="#">Why do I have this issue?</a>'
-      });
-    }
-  );
-}
-
-
-    // Llamar al servicio para insertar la cita en el backend
-    this.backendService.insertarCita(cita).subscribe(
-      (response) => {
-        console.log('Cita insertada en el backend:', response);
-        console.log(cita);
-        
-
-        const newEvent = {
-          title: `${cita.NomComponet} - Estado: ${cita.EstadoComponente} - Cantidad: ${cita.Cantidad}`,
-          start: `${cita.FechaCita}T${cita.HoraCita}`
-        };
-        this.events.push(newEvent);
-        
-        // Mostrar alerta de éxito con SweetAlert
-        Swal.fire({
-          icon: 'success',
-          title: 'Cita exitosa',
-          text: 'La cita se ha insertado correctamente.'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            // Actualizar la página
-            location.reload();
-          }
-        });
-        console.log('Eventos después de insertar:', this.events);
-
-        // Limpiar los campos después de agregar el evento y confirmar la inserción
-        this.selectedDate = '';
-        this.selectedTime = '';
-        this.componentName = '';
-        this.EstadoComponente ='';
-        this.Cantidad = '';
-        this.Urlimagen = ''
-
-
-        const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
-        closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
-
-      },
-      (error) => {
-        console.error('Error al insertar la cita:', error);
-        // Podrías mostrar una alerta u otra acción si la inserción falla
-
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Error al insertar la cita",
-        });
-      }
-    );
-  }
   
   imageSrc: string | ArrayBuffer | null = null;
 isLoadingImage: boolean = false;
