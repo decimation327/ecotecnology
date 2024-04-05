@@ -88,7 +88,7 @@
 }
 
 #boton1{
-  background: linear-gradient(to bottom, rgb(14, 111, 156) 76%, white 86%);
+  background: linear-gradient(to bottom, rgb(14, 111, 156) 81%, white 86%);
   color: white;
   font-size: 21px;
   border-top: 2px solid white; 
@@ -99,7 +99,7 @@ border-left: 2px solid white;
 
 
 #boton2{
-  background: linear-gradient(to bottom, rgb(36, 210, 30) 76%, white 86%);
+  background: linear-gradient(to bottom, rgb(36, 210, 30) 81%, white 86%);
   color: white;
   font-size: 21px;
   border-top: 2px solid white; 
@@ -157,7 +157,7 @@ button.btn.btn-outline-primary:hover{
 }
 
 .col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12 {
-  box-shadow: 2px 1px 21px 0px gray;
+  
   height: 47vh;
   
 }
@@ -301,3 +301,60 @@ body{
 .col-lg-8{
   padding: 0px 0vh 50px 0px;
 }
+
+.col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12 {
+  height: 50vh;
+}
+
+/*@media (min-width: 1161px) and (max-width: 1323px) {
+  .SeccionBotones1 {
+      padding-left: 331px;
+      padding-right: 50px;
+  }
+  
+  .card {
+      height: 84vh;
+  }
+  
+  .SeccionBotones1 button {
+      border-radius: 17px;
+      width: 39vh;
+  }
+  button.btn.btn-outline-primary {
+      width: 26vh;
+  }
+}
+*/
+
+
+@media (min-width: 1324px) and (max-width: 1439px) {
+  .SeccionBotones1 {
+      padding-left: 394px; /* Ajuste del padding para mantener margen */
+      padding-right: 50px; /* Ajuste del padding para mantener margen */
+  }
+  
+  .card {
+      height: 87vh;
+  }
+  
+  .SeccionBotones1 button {
+      border-radius: 17px;
+      width: 38vh;
+  }
+}
+
+/*@media (min-width: 1440px) {
+  .SeccionBotones1 {
+    padding-left: 384px; 
+    padding-right: 50px; 
+    
+  }
+  .card{
+      height: 75vh;
+  }
+  .SeccionBotones1 button{
+      border-radius: 17px;
+      width: 34vh;
+  }
+}
+*/
