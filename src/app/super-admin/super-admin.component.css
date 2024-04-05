@@ -231,49 +231,20 @@ button:hover {
   color: #ccc; /* Cambia el color del ícono cuando se oculta la contraseña */
 }
 
-@media (min-width: 1025px) {
-  .menu-options {
-      width: 300px; /* Ajusta el menú para un acceso fácil y visualmente atractivo */
-  }
-
+@media (min-width: 1324px) and (max-width: 1439px) {
   section {
-      margin-left: 310px; /* Asegura que el contenido principal se alinee correctamente con el menú ampliado */
+    margin-left: 130px;
+  }
+  .formulario-section{
+    height: 110vh;
+  }
+  .profile-pic-container{
+    width: 111px;
+    height: 115px;
+    margin-bottom: -40px;
   }
 
-  .formulario-section {
-      width: 60%; /* Optimiza el ancho para lectura y estética */
-      margin-left: auto; /* Centrado automático para mantener el diseño alineado y profesional */
-      margin-right: auto;
-      padding: 40px; /* Espaciado interno generoso para comodidad visual */
-  }
-
-  .form-group, .another-form-group {
-      padding-top: 15px; /* Espaciado superior para una mejor separación visual */
-      width: 80%; /* Utiliza un ancho relativo para mantener la accesibilidad de los campos */
-      margin-left: 10%; /* Centrado ligero dentro de su contenedor */
-  }
-
-  /* Ajustes adicionales para elementos específicos pueden incluir */
-  .menu-icon {
-      font-size: 24px; /* Ligeramente más grande para facilitar la interacción */
-  }
-
-  .profile-pic-container {
-      width: 150px; /* Ajuste del tamaño para mantener proporciones agradables */
-      height: 150px;
-  }
-
-  .botones button {
-      padding: 15px 30px; /* Botones más grandes para una fácil interacción */
-      font-size: 20px; /* Tamaño de fuente aumentado para mejor legibilidad */
-  }
-
-  /* Asegurar que el texto y otros elementos sean lo suficientemente grandes para leerse fácilmente */
-  body {
-      font-size: 18px; /* Tamaño de fuente base para mejorar la legibilidad en pantallas grandes */
-  }
 }
-
 
 @media (max-width: 1024px) {
   .menu-options {
