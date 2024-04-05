@@ -107,32 +107,25 @@ onUnderstoodClick() {
         title: `${cita.NomComponet} - Estado: ${cita.EstadoComponente} - Cantidad: ${cita.Cantidad}`,
         start: `${cita.FechaCita}T${cita.HoraCita}`
       };
-
-      // Actualizar 'events' con el nuevo arreglo que incluye el nuevo evento
-      this.events = [...this.events, newEvent];
+      this.events.push(newEvent);
 
       // Mostrar alerta de éxito con SweetAlert
       Swal.fire({
         icon: 'success',
         title: 'Cita exitosa',
         text: 'La cita se ha insertado correctamente.'
-      }).then((result) => {
-        // Limpiar los campos después de agregar el evento y confirmar la inserción
-        this.selectedDate = '';
-        this.selectedTime = '';
-        this.componentName = '';
-        this.EstadoComponente = '';
-        this.Cantidad = '';
-        this.cloudinaryImageUrl = '';
-
-        const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
-        closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
-
-        // Recargar la página
-        location.reload();
       });
 
-      console.log('Eventos después de insertar:', this.events);
+      // Limpiar los campos después de agregar el evento y confirmar la inserción
+      this.selectedDate = '';
+      this.selectedTime = '';
+      this.componentName = '';
+      this.EstadoComponente = '';
+      this.Cantidad = '';
+      this.cloudinaryImageUrl = '';
+
+      const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
+      closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
 
     },
     (error) => {
@@ -142,12 +135,12 @@ onUnderstoodClick() {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Error al insertar la cita",
+        text: "¡Algo salió mal!",
+        footer: '<a href="#">¿Por qué tengo este problema?</a>'
       });
     }
   );
 }
-
 
   
   imageSrc: string | ArrayBuffer | null = null;
