@@ -47,13 +47,12 @@ export class CangearPuntosComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
-    this.rolUsuario = this.authService.getrol();   
   }
 
 
   ngOnInit(): void {
     console.log('Iniciando componente cangear-puntos...');
-
+    this.rolUsuario = this.authService.getrol();  
     // Obtén el idCuenta del servicio de autenticación
     this.idCuenta = this.authService.getIdCuenta();
     this.NombreUsuario = this.authService.getNombreUsuario();
