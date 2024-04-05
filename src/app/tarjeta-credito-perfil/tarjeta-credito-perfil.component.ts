@@ -17,10 +17,11 @@ export class TarjetaCreditoPerfilComponent implements OnInit {
   idCuenta: string | null = null;
   numDir: any;
   urlImagenPerfil: any;
-
+  rolUsuario: any;
   constructor(private backendService: BackendServiceService, private authService: AuthService, private location: Location) { }
 
   ngOnInit(): void {
+    this.rolUsuario = this.authService.getrol();   
     this.idCuenta = this.authService.getIdCuenta();
     if (this.idCuenta) {
       this.cargarInformacionDireccion();
