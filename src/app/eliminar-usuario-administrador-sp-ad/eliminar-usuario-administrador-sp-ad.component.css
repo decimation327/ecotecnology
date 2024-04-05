@@ -248,15 +248,6 @@ button.limpiar {
   section {
     margin-left: 130px;
   }
-  .formulario-section{
-    height: 110vh;
-  }
-  .profile-pic-container{
-    width: 111px;
-    height: 115px;
-    margin-bottom: -40px;
-  }
-
 }
 
 @media (max-width: 768px) {
