@@ -1,33 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 * {
-  font-size: 15px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-.contenedorPadre{
-  width: 100%;
-  padding-left: 62vh;
-
-}
-
-.agenda{
-  width: 104vh;
-  border: 3px solid black;
-  margin: 6vh 0vh -717px -59vh;
-  height: 69vh;
-}
-.titulo{
-  text-align: center;
-  color:  rgb(14, 111, 156);
-}
-a.fc-col-header-cell-cushion {
-  color: rgb(14, 111, 156);
-
-}
-
-
-
 
 
 .btn-go-back {
@@ -48,7 +23,6 @@ a.fc-col-header-cell-cushion {
 
 .btn-go-back:hover {
   transform: scale(1.1);
-  background-color:rgb(14, 111, 156);
   background-color: rgb(14, 111, 156);
   color: aliceblue;
   border-radius: 10px;
@@ -84,7 +58,6 @@ a.fc-col-header-cell-cushion {
 
 
 .contenedor {
-
   background-color: #dedcdc; /* Tonalidad más clarita para filas impares */
 
   display: flex;
@@ -95,39 +68,6 @@ a.fc-col-header-cell-cushion {
 
 /* ... (código existente) ... */
 .descripcion {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tituloAgenda {
-  color: #1a78aa;
-}
-
-.parrafoAgenda {
-  font-size: 20px;
-  padding-right: 43vh;
-}
-
-
-
-:host ::ng-deep .calendar {
-  width: 100%;
-  margin: 0px 0px 0px -37px;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
-:host ::ng-deep full-calendar {
-  width: 60%;
-}
-
-/* Cambios para los botones del calendario */
-:host ::ng-deep .fc-button {
-  background-color:rgb(14, 111, 156);
-
   padding: 10px 0px 22px 0px;
   width: 100%;
   display: flex;
@@ -170,16 +110,12 @@ a.fc-col-header-cell-cushion {
 }
 
 :host ::ng-deep .fc-button:hover {
-  background-color:rgb(14, 111, 156);
-
   background-color: #3282b8;
   /* Cambio de color al pasar el ratón */
   color: #fff;
   border-color: #0056b3;
 }
 
- .fc-button-disabled {
-  background-color:  rgb(14, 111, 156);
 :host ::ng-deep .fc-button-disabled {
   background-color: #3282b8;
   /* Color de fondo cuando está deshabilitado */
@@ -194,27 +130,12 @@ a.fc-col-header-cell-cushion {
 }
 
 :host ::ng-deep .modal-header {
-  background-color:rgb(14, 111, 156);
   background-color: #3282b8;
   /* Color de fondo del encabezado del modal */
   color: white;
 }
 
 
-.modal-content{
-  position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 60vh;
-    height: 63vh;
-    color: var(--bs-modal-color);
-    pointer-events: auto;
-    background-color: var(--bs-modal-bg);
-    background-clip: padding-box;
-    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
-    border-radius: var(--bs-modal-border-radius);
-    outline: 0;
-}
   .modal-content{
     position: relative;
       display: flex;
@@ -257,19 +178,6 @@ a.fc-col-header-cell-cushion {
 
 /* ... (código existente) ... */
 .modal-dialog{
-  width: 50vh;
-  height: 50vh;
-}
-.btn-primary {
-  background-color: rgb(14, 111, 156);
-  padding: 12px 301px;
-  letter-spacing: 7px;
-  font-weight: 900;
-
-}
-.btn-primary:hover{
-  background-color: rgb(14, 111, 156);
-}
   width: auto;
   height: 100%;
 }
@@ -309,10 +217,6 @@ a.fc-col-header-cell-cushion {
 }
 
 #btnEnviar {
-  background-color: rgb(14, 111, 156);
-}
-
-#btnEnviar:hover{
   background-color: #1566bd;
   color: white;
 }
@@ -331,13 +235,6 @@ button[type="submit"] {
   border-radius: 10px;
   cursor: pointer;
 }
-
-
-.btnModal {
-  width: auto;
-  padding-left: 488px;
-}
-
 
 button[type="submit"]:hover {
   background-color: #0056b3;
