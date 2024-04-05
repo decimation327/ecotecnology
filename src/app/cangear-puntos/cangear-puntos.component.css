@@ -513,7 +513,7 @@ svg:not(:root) {
 
 #vermasPro{
   text-decoration: none;
-  color: rgb(50, 252, 0);
+  color: rgb(255, 255, 255);
 }
 #vermasPro:hover {
   color: black;
