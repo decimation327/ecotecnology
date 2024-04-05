@@ -59,10 +59,14 @@
        
   </div>
   <label for="profilePic">Carga la imagen del perfil:</label>
-<input type="file" id="profilePic" name="profilePic" (change)="uploadImage($event)">
-<div class="profile-pic-container">
-  <img *ngIf="urlImagenPerfil" [src]="urlImagenPerfil" alt="Imagen seleccionada" class="profile-pic">
-</div>
+  <div class="input-file-container">
+    <input type="file" id="profilePic" name="profilePic" class="input-file" (change)="uploadImage($event)">
+    <span class="input-file-button">Seleccionar foto</span>
+  </div>
+  <div class="profile-pic-container">
+    <img *ngIf="urlImagenPerfil" [src]="urlImagenPerfil" alt="Imagen seleccionada" class="profile-pic">
+  </div>
+  
 
     
     <div class="botones">
