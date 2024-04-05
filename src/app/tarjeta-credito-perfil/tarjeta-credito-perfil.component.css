@@ -99,7 +99,7 @@ border-left: 2px solid white;
 
 
 #boton2{
-  background: linear-gradient(to bottom, rgb(36, 210, 30) 81%, white 86%);
+  background: linear-gradient(to bottom, rgb(36, 210, 30) 90%, white 86%);
   color: white;
   font-size: 21px;
   border-top: 2px solid white; 
@@ -109,7 +109,7 @@ border-left: 2px solid white;
 }
 
 #boton3{
-  background: linear-gradient(to bottom, rgb(14, 111, 156) 76%, white 86%);
+  background: linear-gradient(to bottom, rgb(14, 111, 156) 90%, white 86%);
   color: white;
   font-size: 21px;
   border-top: 2px solid white;
@@ -329,7 +329,7 @@ body{
 
 @media (min-width: 1324px) and (max-width: 1439px) {
   .SeccionBotones1 {
-      padding-left: 375px; /* Ajuste del padding para mantener margen */
+      padding-left: 381px; /* Ajuste del padding para mantener margen */
       padding-right: 50px; /* Ajuste del padding para mantener margen */
   }
   
