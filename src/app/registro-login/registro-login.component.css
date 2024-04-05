@@ -511,6 +511,10 @@ select option {
 
   /* Ajustes para resolución entre 1324px y 1439px */
 @media (min-width: 1324px) and (max-width: 1439px) {
+  body{
+    width: 95%;
+    height: 88%;
+  }
     .container-form {
       justify-content: space-evenly; /* Distribuye uniformemente los formularios */
     }
@@ -548,6 +552,7 @@ select option {
       margin-left: 90px;
       width: 50%; /* Ancho del mensaje */
       padding: 0px; /* Añade espacio interno */
+      margin-top: 300px;
     }
   
     .message h2 {
