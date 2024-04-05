@@ -1,6 +1,14 @@
 <div>
-    <div>
-        <app-nav-usuario></app-nav-usuario>
+    <div *ngIf="rolUsuario === 'UsuarioAdministrador'">
+      <app-nav-administrador></app-nav-administrador>
+    </div>
+    
+    <div *ngIf="rolUsuario === 'Usuario'">
+      <app-nav-usuario></app-nav-usuario>
+    </div>
+    
+    <div *ngIf="!rolUsuario">
+      <app-nav-usuario></app-nav-usuario>
     </div>
 </div>
 
@@ -91,3 +99,4 @@
 <div>
     <app-footer></app-footer>
 </div>
+
