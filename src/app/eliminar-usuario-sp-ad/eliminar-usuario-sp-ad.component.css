@@ -241,3 +241,9 @@ button.limpiar {
 .selected i {
   display: inline-block; /* Mostrar el icono cuando está seleccionado */
 }
+
+@media (min-width: 1324px) and (max-width: 1439px){
+  section{
+    margin-left: 130px;
+  }
+}
