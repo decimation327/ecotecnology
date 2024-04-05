@@ -107,10 +107,7 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
         title: `${cita.NomComponet} - Estado: ${cita.EstadoComponente} - Cantidad: ${cita.Cantidad}`,
         start: `${cita.FechaCita}T${cita.HoraCita}`
       };
-      this.events.push(newEvent);
-
-      // Actualizar las opciones del calendario para reflejar los nuevos eventos
-      this.calendarOptions = { ...this.calendarOptions, events: this.events };
+      this.events = [...this.events, newEvent]; // Actualizar el arreglo 'events'
 
       // Mostrar alerta de éxito con SweetAlert
       Swal.fire({
@@ -131,6 +128,20 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
       closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
 
     },
+    (error) => {
+      console.error('Error al insertar la cita:', error);
+      // Podrías mostrar una alerta u otra acción si la inserción falla
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "¡Algo salió mal!",
+        footer: '<a href="#">¿Por qué tengo este problema?</a>'
+      });
+    }
+  );
+}
+
     (error) => {
       console.error('Error al insertar la cita:', error);
       // Podrías mostrar una alerta u otra acción si la inserción falla
