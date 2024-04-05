@@ -244,11 +244,21 @@ button.limpiar {
 
 
 /* responsive */
-@media (min-width: 1324px) and (max-width: 1439px){
-  section{
+@media (min-width: 1324px) and (max-width: 1439px) {
+  section {
     margin-left: 130px;
   }
+  .formulario-section{
+    height: 110vh;
+  }
+  .profile-pic-container{
+    width: 111px;
+    height: 115px;
+    margin-bottom: -40px;
+  }
+
 }
+
 @media (max-width: 768px) {
   .formulario-section{
     width: 900px;
