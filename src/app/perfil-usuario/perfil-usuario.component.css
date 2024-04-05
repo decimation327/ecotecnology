@@ -229,7 +229,6 @@ body{
 
 button.btn.btn-outline-primary {
     width: 26vh;
-    margin: 22px 9px 12px 0px ;
 }
 
 
@@ -243,3 +242,70 @@ button.btn.btn-outline-primary {
 .col-lg-8{
     padding: 0px 0vh 50px 0px;
 }
+
+/*@media (min-width: 1161px) and (max-width: 1323px) {
+    .SeccionBotones1 {
+        padding-left: 336px; 
+        padding-right: 50px;
+         
+    }
+    
+    .card {
+        height: 84vh;
+    }
+    
+    .SeccionBotones1 button {
+        border-radius: 17px;
+        width: 39vh;
+    }
+    button.btn.btn-outline-primary {
+        width: 26vh;
+    }
+  }*/
+  
+  
+  
+  @media (min-width: 1324px) and (max-width: 1439px) {
+    .SeccionBotones1 {
+        padding-left: 381px; /* Ajuste del padding para mantener margen */
+        padding-right: 50px; /* Ajuste del padding para mantener margen */
+    }
+    
+    .card {
+        height: 82vh;
+    }
+    
+    .SeccionBotones1 button {
+        border-radius: 17px;
+        width: 38vh;
+    }
+}
+
+  /*@media (min-width: 1440px) {
+    .SeccionBotones1 {
+      padding-left: 384px; 
+      padding-right: 50px; 
+      
+    }
+    .card{
+        height: 75vh;
+    }
+    .SeccionBotones1 button{
+        border-radius: 17px;
+        width: 34vh;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .SeccionBotones1 {
+        flex-direction: column; 
+        align-items: stretch; 
+        padding-left: 20px;
+    }
+
+    .SeccionBotones1 button {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+  }*/
+  
