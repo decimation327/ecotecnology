@@ -126,6 +126,23 @@
   margin-left: 5px;
 }
 
+.puntost {
+  padding: 15px;
+  color: #45ce23; /* Color del borde al enfocar */
+  border-color: #45ce23; /* Color del borde al enfocar */
+  border: solid 4px;
+  border-radius: 9px;
+  font-size: 35px;
+  margin-right: 1760px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.puntost:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgb(14, 111, 156), 0 0 25px rgb(14, 111, 156), 0 0 50px rgb(14, 111, 156), 0 0 100px rgb(14, 111, 156);
+}
+
 
 /* Estilos para la sección de cartas de productos */
 
