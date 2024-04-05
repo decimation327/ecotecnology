@@ -26,6 +26,7 @@ export class CangearPuntosComponent implements OnInit {
   idCuenta: any;
   valor: any;
   NombreUsuario!: string | null;
+  rolUsuario: any;
 
   constructor(private backenService: BackendServiceService, private authService: AuthService, private CorreoService: CorreoService, private location: Location) {
     this.productos = [
@@ -46,6 +47,7 @@ export class CangearPuntosComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+    this.rolUsuario = this.authService.getrol();   
   }
 
 
