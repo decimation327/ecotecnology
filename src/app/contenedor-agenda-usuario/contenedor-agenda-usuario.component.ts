@@ -73,29 +73,78 @@ export class ContenedorAgendaUsuarioComponent implements OnInit {
   }
 
   onUnderstoodClick() {
-    // Verificar si se ha seleccionado una fecha y hora
-    if (!this.selectedDate || !this.selectedTime) {
-      alert("Por favor selecciona una fecha y hora.");
-      return;
+  // Verificar si se ha seleccionado una fecha y hora
+  if (!this.selectedDate || !this.selectedTime) {
+    alert("Por favor selecciona una fecha y hora.");
+    return;
+  }
+
+  // Obtener la fecha y hora seleccionadas
+  const startDate: Date = new Date(`${this.selectedDate}T${this.selectedTime}`);
+
+  // Formatear la hora en un formato válido (por ejemplo, "HH:mm:ss")
+  const formattedTime: string = startDate.toTimeString().split(' ')[0]; // Extraer solo la parte de la hora
+
+  // Crear el objeto de cita con la hora formateada
+  const cita = {
+    NomComponet: this.componentName,
+    FechaCita: this.selectedDate,
+    HoraCita: formattedTime, // Usar la hora formateada aquí
+    IdCuenta: this.idCuenta,
+    EstadoComponente: this.EstadoComponente,
+    Cantidad: this.Cantidad,
+    UrlImagen: this.cloudinaryImageUrl
+  };
+
+  // Llamar al servicio para insertar la cita en el backend
+  this.backendService.insertarCita(cita).subscribe(
+    (response) => {
+      console.log('Cita insertada en el backend:', response);
+      console.log(cita);
+
+      // Agregar el nuevo evento al arreglo 'events'
+      const newEvent = {
+        title: `${cita.NomComponet} - Estado: ${cita.EstadoComponente} - Cantidad: ${cita.Cantidad}`,
+        start: `${cita.FechaCita}T${cita.HoraCita}`
+      };
+      this.events.push(newEvent);
+
+      // Actualizar las opciones del calendario para reflejar los nuevos eventos
+      this.calendarOptions = { ...this.calendarOptions, events: this.events };
+
+      // Mostrar alerta de éxito con SweetAlert
+      Swal.fire({
+        icon: 'success',
+        title: 'Cita exitosa',
+        text: 'La cita se ha insertado correctamente.'
+      });
+
+      // Limpiar los campos después de agregar el evento y confirmar la inserción
+      this.selectedDate = '';
+      this.selectedTime = '';
+      this.componentName = '';
+      this.EstadoComponente = '';
+      this.Cantidad = '';
+      this.cloudinaryImageUrl = '';
+
+      const closeButton: HTMLElement | null = document.querySelector('#staticBackdrop .btn-close');
+      closeButton?.click(); // Esto simula un clic en el botón de cierre del modal.
+
+    },
+    (error) => {
+      console.error('Error al insertar la cita:', error);
+      // Podrías mostrar una alerta u otra acción si la inserción falla
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
+  );
+}
 
-    // Obtener la fecha y hora seleccionadas
-    const startDate: Date = new Date(`${this.selectedDate}T${this.selectedTime}`);
-
-    // Formatear la hora en un formato válido (por ejemplo, "HH:mm:ss")
-    const formattedTime: string = startDate.toTimeString().split(' ')[0]; // Extraer solo la parte de la hora
-
-    // Crear el objeto de cita con la hora formateada
-    const cita = {
-      NomComponet: this.componentName,
-      FechaCita: this.selectedDate,
-      HoraCita: formattedTime, // Usar la hora formateada aquí
-      IdCuenta: this.idCuenta,
-      EstadoComponente: this.EstadoComponente,
-      Cantidad: this.Cantidad,
-      UrlImagen: this.cloudinaryImageUrl
-    };
-    
 
     // Llamar al servicio para insertar la cita en el backend
     this.backendService.insertarCita(cita).subscribe(
