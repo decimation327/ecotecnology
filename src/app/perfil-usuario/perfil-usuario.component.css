@@ -84,7 +84,7 @@
     object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    align-items: center;
+    padding-right:50vh ;
     margin: 30px auto;
     margin-bottom: 10px;
     border-radius: 110px;
@@ -150,7 +150,7 @@
 
 
 #boton1{
-    background: linear-gradient(to bottom, rgb(36, 210, 30) 90%, white 86%);
+    background: linear-gradient(to bottom, rgb(36, 210, 30) 90%, white 95%);
     color: white;
     font-size: 21px;
     border-top: 2px solid white; 
@@ -161,7 +161,7 @@
 
 
 #boton2{
-    background: linear-gradient(to bottom, rgb(14, 111, 156) 90%, white 86%);
+    background: linear-gradient(to bottom, rgb(14, 111, 156) 90%, white 95%);
     color: white;
     font-size: 21px;
     border-top: 2px solid white; 
