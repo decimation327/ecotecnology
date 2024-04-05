@@ -552,7 +552,6 @@ select option {
       margin-left: 90px;
       width: 50%; /* Ancho del mensaje */
       padding: 0px; /* Añade espacio interno */
-      margin-top: 300px;
     }
   
     .message h2 {
@@ -560,7 +559,7 @@ select option {
     }
   
     .message p {
-      margin-top: 340px; /* Ajusta la posición del párrafo */
+      margin-top: 300px; /* Ajusta la posición del párrafo */
     }
   
     .imagen-perfil {
