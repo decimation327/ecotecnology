@@ -1,0 +1,66 @@
+<div class="menu-container">
+  <div class="menu-icon" (click)="toggleMenu()">
+    ☰
+  </div>
+  <div class="menu-options" [ngClass]="{ 'abreviado': !showMenu, 'show-menu': showMenu}">
+    <ul>
+      <li (click)="opcionSeleccionada('Eliminar Usuario')">Eliminar Usuario</li>
+      <li (click)="opcionSeleccionada('Agregar Usuario Administrador')"src="https://res.cloudinary.com/dspugxtgr/image/upload/v1709154016/bdydnq6p4ngajs4y5xmb.png" >Agregar Usuario Administrador </li>
+      <li (click)="cerrarSesion()" (click)="opcionSeleccionada('Cerrar Sesión')">Cerrar Sesión</li>
+    </ul>
+  </div>
+</div>
+
+
+
+<section>
+  <div id="principal">
+  </div>
+
+  <div class="formulario-section">
+    <h1>Eliminar una Cuenta Usuario Administrador</h1>
+
+    <div>
+      <img class="logo" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg" alt="">
+    </div>
+    
+    <div class="buscator">
+      <input type="text" [(ngModel)]="filtroNombre" placeholder="Buscar por nombre" (keyup)="buscarUsuarioCompleto()">
+      <button class="buscar" (click)="buscarUsuarioCompleto()">Buscar</button>
+      <button class="limpiar" (click)="cargarUsuariosAdmin()">Volver</button>
+    </div>
+    
+    
+    
+    <table class="tabla-usuarios">
+      <thead>
+        <tr>
+          <th>  </th>
+          <th>Nombre Completo</th>
+          <th>Correo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuariosEncontrados">
+          <td>
+            <button id="btnSeleccionar_{{usuario.id}}" class="btn btn-primary btnSeleccionar" (click)="seleccionarUsuario(usuario)" [class.selected]="usuario.isSelected">
+              <span *ngIf="usuario.isSelected"><i class="fas fa-check"></i></span>
+              <span *ngIf="!usuario.isSelected">Seleccionar</span>
+          </button>
+          </td>
+          <td>{{ usuario.nombreCompleto }}</td>
+          <td>{{ usuario.correo }}</td>
+          <td>
+            <button (click)="eliminarUsuario(usuario.nombreCompleto)" [disabled]="!usuario.isSelected">Eliminar</button>
+          </td>
+        </tr>
+        
+        <tr *ngIf="usuariosEncontrados.length === 0">
+          <td colspan="4">No se encontraron usuarios.</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</section>

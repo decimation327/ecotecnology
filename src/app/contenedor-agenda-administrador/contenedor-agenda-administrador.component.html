@@ -1,0 +1,208 @@
+<main>
+  <app-nav-administrador></app-nav-administrador>
+
+  <div class="volver">
+    <!-- Botón para volver atrás -->
+    <button (click)="goBack()" class="btn-go-back">
+      <span class="sr-only">Volver</span>
+      <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+      </svg>
+    </button>
+  </div>
+
+  
+  
+  <div class="gestion-citas-info">
+    <h1>Gestión de Citas</h1>
+    <p class="info-text">
+      Esta sección permite la administración integral de las citas programadas para la recolección de componentes electrónicos. Como administrador, puedes visualizar todas las citas registradas, realizar búsquedas específicas por fecha, usuario, componente, o estado de la cita, y aplicar filtros para agilizar la gestión. Además, dispones de herramientas para editar los detalles de las citas seleccionadas, actualizar su estado (Disponible, Cancelado, Pendiente), o eliminarlas si se requiere. Esta interfaz ha sido diseñada para facilitar el seguimiento eficiente de las citas y asegurar una óptima coordinación entre los usuarios y el servicio de recolección.
+  </p>
+  </div>
+
+  <div class="datatable-container">
+
+    <div class="fecha-container">
+      <label for="fecha">Buscar Fecha:</label>
+      <div class="fecha-input-container">
+        <input type="date" id="fecha" name="fecha" [(ngModel)]="fechaBusqueda" (keyup.enter)="buscarCitasPorFecha()" class="fecha-input">
+        <button type="button" class="fecha-button" (click)="buscarCitasPorFecha()">Buscar</button>
+      </div>
+    </div>
+
+    <div class="header-tools">
+      <div class="tools">
+        <ul>
+          <li>
+            <button (click)="listarCitas()">
+              <i class="material-icons">add_circle</i>Listar Citas
+            </button>
+          </li>
+          <li>
+            <button class="delete-button" (click)="eliminarCitasSeleccionadas()" [disabled]="seleccionadas.length === 0">
+              <i class="material-icons">delete</i> Eliminar Cita(s)
+            </button>
+          </li>
+          <li>
+            <div class="search">
+              <input type="text" placeholder="Buscar..." class="search-input" [(ngModel)]="busquedaTexto">
+              <button class="search-btn" (click)="buscar()">Buscar</button>
+              <button class="clear-btn" (click)="limpiarBusqueda()">Limpiar</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <li class="select-container">
+        <label for="filtro-estado" class="select-label">Filtro de Estado:</label>
+        <select id="status" name="status" required [(ngModel)]="selectedState" (change)="filtrarPorEstado()">
+          <option value="Disponible">Disponible</option>
+          <option value="Cancelado">Cancelado</option>
+          <option value="Pendiente">Pendiente</option>
+        </select>             
+      </li>                    
+    </div>
+
+    <table class="datatable">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Estado</th>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Hora</th>
+          <th>Fecha</th>
+          <th>Cantidad</th>
+          <th>Descripción Componente</th>
+          <th>Estado del Componente</th>
+          <th>Barrio</th>
+          <th>Município</th>
+          <th>Dirección</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let cita of citas" [class.selected]="seleccionadas.includes(cita)">
+          <td class="table-checkbox">
+            <button class="select-button" (click)="toggleSeleccion(cita)">
+              <i class="material-icons">{{ seleccionadas.includes(cita) ? 'check_box' : 'check_box_outline_blank' }}</i>
+            </button>
+          </td>
+          <td><span class="status"></span>{{ cita.disponible }}</td>
+          <td>{{ cita.nombreUsuario }}</td>
+          <td>{{ cita.telefono }}</td>
+          <td>{{ cita.horaCita }}</td>
+          <td>{{ cita.fechaCita | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ cita.cantidad }}</td>
+          <td>{{ cita.nomComponente}}</td>
+          <td>{{ cita.estadoComponente }}</td>
+          <td>{{ cita.barrio }}</td> 
+          <td>{{ cita.municipio }}</td>
+          <td>{{ cita.direccionCompleta }}</td>
+          <td><button class="ver-imagen-btn" (click)="mostrarPopup(cita.urlimagen)">Ver Imagen</button></td>
+
+            <div *ngIf="mostrarImagen" class="popup" (click)="mostrarImagen = false">
+              <img [src]="cita.urlimagen" alt="Imagen" class="imagen-popup">
+             </div>
+          
+          <td>
+            <button class="edit-button" (click)="openModal()" [disabled]="seleccionadas.length !== 1">
+              <i class="material-icons">edit</i> Editar Cita
+            </button> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-tools">
+      <!-- Botones de paginación y navegación por días del mes -->
+      <div class="pagination">
+        <!-- Botón para retroceder -->
+        <button (click)="showPreviousButtons()" class="nav-button">&lt;</button>
+        
+        <!-- Mostrar solo los botones dentro del rango de los índices firstVisibleIndex y lastVisibleIndex -->
+        <button *ngFor="let button of allButtons.slice(firstVisibleIndex, lastVisibleIndex + 1)" 
+                (click)="selectButton(button)" class="page-button">{{ button }}</button>
+        
+        <!-- Botón para avanzar -->
+        <button (click)="showNextButtons()" class="nav-button">&gt;</button>
+      </div>
+      
+      <!-- Botón para abrir el calendario -->
+      <button (click)="openCalendarModal()" class="calendar-button">Calendario</button>
+    </div>
+
+  </div>
+
+  <!-- Modal para editar citas -->
+  <div id="modalEditarCita" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2 class="tituloh2">Editar Cita</h2>
+
+
+      <!-- Aquí empieza el formulario -->
+      <form>
+        <div class="modal-explanation">
+          <p>Este modal permite la actualización del estado de las citas, ofreciendo opciones como 'Disponible', 'Cancelado' y 'En curso'. Selecciona el nuevo estado y confírmalo con 'Guardar Cambios' para actualizar la base de datos.<br> Usa 'Cancelar' para cerrar el modal sin aplicar modificaciones.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="status">Estado:</label>
+          
+          <select id="status" name="status" required [(ngModel)]="selectedState">
+            <option value="Disponible">Disponible</option>
+            <option value="Cancelado">Cancelado</option>
+            <option value="En curso">Pendiente</option>
+          </select>          
+        </div>
+        <button type="submit" class="save-button" (click)="guardarCambiosEstado(selectedState)">Guardar Cambios</button>
+        <button type="button" class="cancel-button" (click)="closeModal()">Cancelar</button>
+      </form>
+      <!-- Fin del formulario -->
+    </div>
+  </div>
+
+
+ 
+  <div id="modalCalendario" class="modal" #modalCalendario>
+    <div class="modal-content">
+        <span class="close" (click)="closeCalendarModal()">&times;</span>
+        <!-- Contenido del calendario -->
+        <div class="calendar">
+            <div class="calendar-header">
+                <button (click)="previousMonth()">Anterior</button>
+                <h2>{{ getMonthName(currentMonth) }} {{ currentYear }}</h2>
+                <button (click)="nextMonth()">Siguiente</button>
+            </div>
+            <div class="calendar-body">
+                <div class="calendar-row" *ngFor="let week of weeks">
+                    <div class="calendar-day" *ngFor="let day of week">
+                        <button *ngIf="day !== null" (click)="selectDay(day)">{{ day }}</button>
+                        <div *ngIf="day === null" style="height: 40px; width: calc((100% / 7) - 2px);"></div> <!-- Espacio para días nulos -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  
+  <!-- Modal de advertencia por selección múltiple -->
+<div id="modalAdvertencia" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeAdvertenciaModal()">&times;</span>
+    <h2>Advertencia</h2>
+    <p>Se han seleccionado {{ seleccionadas.length }} citas. Por favor, seleccione solo una cita para continuar.</p>
+  </div>
+</div>
+ 
+
+
+
+  <app-footer></app-footer>
+</main>

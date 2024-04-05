@@ -1,0 +1,831 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+.imagen-perfil {
+    width: 120px; /* Ajuste el tamaño según sea necesario */
+    height: 120px; /* Mantén un aspecto cuadrado para la consistencia */
+    border-radius: 50%; /* Esencial para la forma circular */
+    object-fit: cover; /* Importante para manejar imágenes de diferentes aspectos */
+    border: 4px solid #fff; /* Un borde sólido para destacar la imagen sobre fondos variados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Una sombra sutil para añadir profundidad */
+    display: block; /* Cambia a block para centrar más fácilmente si es necesario */
+    margin: 20px auto; /* Centra la imagen si el contenedor lo permite */
+    margin-bottom: 10px; 
+}
+
+  
+#principal{
+    background: rgb(14, 111, 156);
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+
+#principal {
+    overflow: hidden;
+}
+
+#sliderPrincipal {
+    white-space: nowrap;
+    transform: 0.5s ease-in-out;
+    animation: scroll 60s linear infinite;
+    -webkit-animation: scroll 60s linear infinite;
+    
+}
+
+#nombre {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+@keyframes scroll {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    50% {
+        transform:translateX(-100%);
+    }
+    75% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide{
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+}
+@keyframes nombreanimacion {
+    0% {color: #3cff00; left: -700px; top: 0px;}
+    25%{color: #3cff00; left: -500px;}
+    50% {color: #3cff00; left: -300px;}
+    75%{color: #3cff00; left: -200px;}
+    100% {color: #3cff00; left: 0;}
+}
+
+
+
+body {
+    margin: 5px;
+    height: 92.9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 188vh;
+    font-size: 25px;
+}
+
+.container-form {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition:  all .5s ease-out;
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 50px;
+    margin-top: -100px;
+}
+
+
+.message {
+    height: 60%;
+    width: 569px;
+    border-radius: 60px ;
+    background-image: url('https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* La imagen de fondo se ajustará para cubrir todo el contenedor */
+    background-position: center; /* La imagen de fondo se posicionará en el centro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+}
+
+
+.message h2 {
+    font-size: 2.4rem;
+    font-weight: 550; /* Aumenta el grosor de la letra */
+    padding: .0rem 0;
+    margin-top: -25px;
+    color: #191919;
+}
+
+
+
+.message p {
+    font-size: 1.3em;
+    font-weight: 420; /* Aumenta el grosor de la letra */
+    color: #000000;
+    margin-top: 500px;
+    margin-left: -30px;
+}
+
+.message button {
+    position: relative;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    background-color: rgb(66, 181, 44);
+    box-shadow: 0 0 5px  #3cff00, 0 0 25px #3cff00;
+    border-radius: 12px;
+    border: 1px solid rgb(31, 116, 14);
+    outline: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    margin-top: 25px;
+    margin-left: -23px;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover {
+    background-color: rgb(14, 111, 156);
+    box-shadow: 0 0 5px rgb(14, 111, 156), 0 0 25px rgb(14, 111, 156), 0 0 50px rgb(14, 111, 156), 0 0 100px rgb(14, 111, 156);
+}
+
+.formulario {
+    width: 27%;
+    height: 600px;
+    padding: 0rem;
+    margin: 1rem;
+    margin-top: 125px;
+    margin-left: 156px;
+    background-color: #7cbeb330;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(-70px);
+    border-radius: 35px;
+    text-align: center;
+    color:rgb(45, 196, 28);
+    border: 0.1rem solid rgb(178, 178, 178);
+}
+.formulario1 {
+    width: 21%;
+    height: 485px;
+    padding: 0rem;
+    margin: 1rem;
+    margin-top: 165px;
+    margin-left: 450px;
+    background-color: #7cbeb330;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(-70px);
+    border-radius: 35px;
+    text-align: center;
+    color: rgb(45, 196, 28);
+    border: 0.1rem solid rgb(178, 178, 178);
+}
+
+
+.create-account {
+    padding: 1.8rem 0;
+    font-size: 2.2rem;
+}
+#tituloIniciarSesion{
+    padding-top: 70px;
+}
+
+
+
+.border-icon {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border: solid thin rgb(201, 201, 201);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .3s ease-in;
+}
+
+.border-icon:hover {
+    
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.cuenta-gratis {
+    padding: 1rem 0;
+}
+
+.formulario input {
+    width: 68%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: rgb(57, 212, 34) thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+}
+.formulario1 input {
+    width: 68%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: rgb(57, 212, 34) thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+}
+
+.formulario input[type="submit"] {
+    width: 60%;
+    margin: auto;
+    border: solid thin blue ;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: rgb(44, 139, 25);
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #c71515;
+}
+
+.sign-in {
+    position: absolute;
+
+
+    
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+::placeholder{
+    color: rgb(0, 0, 0);
+}
+.btnF{
+    width: 51%; 
+    border: solid thin rgb(72, 72, 72);
+    padding: .7rem;
+    border-radius: 12px;
+    background-color: rgb(55, 172, 31);
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-top: 3rem;
+    margin: auto;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #fff;
+}
+.btnF:hover {
+    background-color: rgb(97, 189, 79); /* Ajuste para hover */
+}
+.btn-upload {
+    width: 51%;
+    background-color: rgb(55, 172, 31);
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 900;
+    padding: 10px 20px;
+    border: solid thin rgb(72, 72, 72);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.btn-upload:hover {
+    background-color: rgb(97, 189, 79); /* Ajuste para hover */
+}
+
+select{
+    background-color: #000000;
+    color: #fff;
+}
+  
+  /* Estilos para las opciones */
+select option {
+    background-color: #000000;
+    color: #fff;
+ }
+  
+  /* Estilos para la opción seleccionada */
+  select option:checked {
+    background-color: #000000;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .input-with-toggle {
+    position: relative;
+  }
+  
+  .toggle-icon {
+    position: absolute;
+    right: 5px; /* Ajusta la posición del icono */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .eye {
+    width: 20px;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    right: 55px;
+    position: relative;
+  }
+  
+  .eye:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .toggle-icon.mostrar .eye:before {
+    background-color: #00f; /* Cambia el color del ojo cuando se muestra la contraseña */
+  }
+  
+
+
+
+
+
+/* Ajustes para resolución entre 1160px y 1323px */
+@media (min-width: 1160px) and (max-width: 1323px) {
+
+    body {
+        margin: 5px;
+        height: 92.9vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 158vh;
+        font-size: 25px;
+    }
+
+    .container-form {
+        justify-content: space-evenly; /* Distribuye uniformemente los formularios */
+
+    }
+  
+    .formulario {
+        width: 45%;
+        height: 42rem;
+        max-width: 294px;
+        margin: 20px 0;
+        margin-left: -300px;
+        padding: 9px;
+      background-color: #fff; /* Fondo blanco */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      transition: box-shadow 0.3s ease; /* Transición suave de la sombra */
+    }
+    .formulario1 {
+        width: 45%;
+        height: 33rem;
+        max-width: 294px;
+        margin: 20px 0;
+        margin-left: 270px;
+        margin-top: 100px;
+        padding: 9px;
+      background-color: #fff; /* Fondo blanco */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      transition: box-shadow 0.3s ease; /* Transición suave de la sombra */
+    }
+  
+    .formulario:hover, .formulario1:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 0, 0, 0.2), 0 0 35px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    }
+  
+    .welcome-back {
+      width: 70%; /* Ancho completo */
+      margin: 0px 0; /* Espacio arriba y abajo */
+      text-align: center; /* Centra el texto */
+    }
+
+    
+  
+    .message {
+      margin-left: 20px;
+        width: 60%;
+        padding: 0px;
+      background-color: #fff; /* Fondo blanco */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      transition: box-shadow 0.3s ease; /* Transición suave de la sombra */
+    }
+    .message h2 {
+        margin-top: -62px;
+    }
+    .message p {
+        margin-top: 340px;
+    }
+  
+    
+  
+    .imagen-perfil {
+      width: 80px; /* Tamaño de la imagen de perfil */
+      height: 80px; /* Tamaño de la imagen de perfil */
+      margin: 20px auto; /* Centra horizontalmente */
+      display: block; /* Cambia a bloque para centrar fácilmente */
+      border: 4px solid #fff; /* Borde blanco */
+      border-radius: 50%; /* Borde redondeado para forma circular */
+      object-fit: cover; /* Ajusta la imagen */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    }
+  
+    .btnF, .btn-upload {
+      width: 100%; /* Ancho completo */
+      margin-top: 0px; /* Espacio arriba */
+      padding: 15px 0; /* Añade espacio interno */
+      background-color: #3cff00; /* Color de fondo */
+      border: none; /* Borde ninguno */
+      border-radius: 15px; /* Bordes redondeados */
+      font-size: 1rem; /* Tamaño de fuente */
+      font-weight: bold; /* Grosor de fuente */
+      color: #fff; /* Color de texto */
+      cursor: pointer; /* Cambia el cursor al pasar */
+      transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    }
+  
+    .btnF:hover, .btn-upload:hover {
+      background-color: #2bae00; /* Cambia el color de fondo al pasar */
+    }
+  }
+  
+
+
+
+
+
+
+
+  /* Ajustes para resolución entre 1324px y 1439px */
+@media (min-width: 1324px) and (max-width: 1439px) {
+    .container-form {
+      justify-content: space-evenly; /* Distribuye uniformemente los formularios */
+    }
+  
+    .formulario1 {
+      width: 93%; /* Ancho de cada formulario */
+      height: 34rem; /* Altura de los formularios */
+      max-width: 294px; /* Ancho máximo */
+      margin: 20px 0; /* Espacio arriba y abajo */
+      padding: 9px; /* Añade espacio interno */
+      margin-top: 100px;
+      margin-left: 300px;
+    }
+    .formulario {
+        width: 93%; /* Ancho de cada formulario */
+        height: 43rem; /* Altura de los formularios */
+        max-width: 294px; /* Ancho máximo */
+        margin: 20px 0; /* Espacio arriba y abajo */
+        padding: 9px; /* Añade espacio interno */
+        margin-left: -270px;
+
+      }
+  
+    .formulario:hover, .formulario1:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 0, 0, 0.2), 0 0 35px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    }
+  
+    .welcome-back {
+        width: 58%;
+        margin: 0px 0;
+        text-align: center;
+    }
+  
+    .message {
+      margin-left: 90px;
+      width: 50%; /* Ancho del mensaje */
+      padding: 0px; /* Añade espacio interno */
+    }
+  
+    .message h2 {
+      margin-top: -62px; /* Ajusta la posición del título */
+    }
+  
+    .message p {
+      margin-top: 340px; /* Ajusta la posición del párrafo */
+    }
+  
+    .imagen-perfil {
+      width: 80px; /* Tamaño de la imagen de perfil */
+      height: 80px; /* Tamaño de la imagen de perfil */
+      margin: 20px auto; /* Centra horizontalmente */
+    }
+  
+    .btnF, .btn-upload {
+      width: 100%; /* Ancho completo */
+      margin-top: 0px; /* Espacio arriba */
+      padding: 15px 0; /* Añade espacio interno */
+    }
+  }
+  
+
+
+
+
+
+
+  /* Ajustes para resolución de 1440px en adelante */
+@media (min-width: 1440px) {
+    .container-form {
+      justify-content: space-around; /* Distribuye uniformemente los formularios */
+    }
+  
+    .formulario1 {
+      width: 23%; /* Ancho de cada formulario */
+      height: 33rem; /* Altura de los formularios */
+      max-width: 294px; /* Ancho máximo */
+      margin: 20px 0; /* Espacio arriba y abajo */
+      padding: 9px; /* Añade espacio interno */
+    }
+    .formulario {
+        width: 53%; /* Ancho de cada formulario */
+        height: 42rem; /* Altura de los formularios */
+        max-width: 294px; /* Ancho máximo */
+        margin: 20px 0; /* Espacio arriba y abajo */
+        margin-left: -500px;
+        padding: 9px; /* Añade espacio interno */
+      }
+  
+    .formulario:hover, .formulario1:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 0, 0, 0.2), 0 0 35px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+    }
+  
+    .welcome-back {
+      width: 70%; /* Ancho completo */
+      margin: 0px 0; /* Espacio arriba y abajo */
+      text-align: center; /* Centra el texto */
+    }
+  
+    .message {
+      margin-left: 80px;
+      width: 50%; /* Ancho del mensaje */
+      padding: 0px; /* Añade espacio interno */
+    }
+  
+    .message h2 {
+      margin-top: -62px; /* Ajusta la posición del título */
+    }
+  
+    .message p {
+      margin-top: 340px; /* Ajusta la posición del párrafo */
+    }
+  
+    .imagen-perfil {
+      width: 80px; /* Tamaño de la imagen de perfil */
+      height: 80px; /* Tamaño de la imagen de perfil */
+      margin: 20px auto; /* Centra horizontalmente */
+    }
+  
+    .btnF, .btn-upload {
+      width: 100%; /* Ancho completo */
+      margin-top: 0px; /* Espacio arriba */
+      padding: 15px 0; /* Añade espacio interno */
+    }
+  }
+  
+
+
+
+
+
+
+
+  
+@media (max-width: 768px) {
+  body {
+      display: flex;
+      width: auto;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+  }
+
+  #principal, #sliderPrincipal {
+      width: 100%; 
+      padding: 5px;
+      box-sizing: border-box;
+  }
+
+  #nombre {
+      font-size: 1rem; /* Tamaño de fuente ajustado para la legibilidad en dispositivos pequeños */
+      text-align: center; /* Alineación del texto al centro */
+      padding: 15px 0; /* Añade algo de espacio superior e inferior */
+  }
+
+  .container-form {
+      width: 90%; /* Toma el ancho completo */
+      padding: 0 20px; /* Espacio horizontal en los lados del contenedor */
+      margin-top: 90px;
+  }
+
+  .formulario, .formulario1 {
+      height: max-content;
+      margin: 0 auto; /* Centra el formulario */
+      width: calc(100% - 30px); /* Ajusta el ancho para incluir el padding */
+  }
+
+  .message {
+      padding: 15px; /* Añade relleno para que el contenido no esté pegado a los bordes */
+  }
+
+  .btn-upload, .btnF, .sign-in-btn {
+      width: calc(100% - 30px); /* Ajusta el ancho para incluir el padding */
+      margin: 10px auto; /* Espaciado vertical y centrado horizontal */
+  }
+
+  .imagen-perfil {
+      margin: 20px auto; /* Centra y añade espacio alrededor de la imagen de perfil */
+  }
+  
+  /* Ajuste de los input fields para que llenen su contenedor */
+  .formulario input, .formulario1 input {
+      width: 90%; /* Ajusta el ancho al 100% */
+      margin: 10px 0; /* Espaciado vertical */
+  }
+
+  /* Ajustes para íconos y otros elementos decorativos */
+  .toggle-icon, .border-icon, .eye {
+      margin: 0%;/* Ajustes específicos para estos elementos, si es necesario */
+  }
+
+  .welcome-back {
+      width: 50%; /* Se ajusta al 100% del ancho disponible */
+      margin: 0 auto; /* Centrado horizontalmente sin margen superior */
+      margin-top: -40px;
+      padding: 20px; /* Añade un poco de relleno */
+      box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+      display: flex; /* Mantiene el layout flex */
+      align-items: center; /* Centra los elementos verticalmente */
+      justify-content: center; /* Centra los elementos horizontalmente */
+      text-align: center; /* Alinea el texto al centro */
+  }
+
+  /* Conservamos el diseño original para h2 y p dentro de .message */
+  .message h2 {
+      font-size: 2.2rem; /* Mantenemos el tamaño de fuente grande */
+      font-weight: 550; /* Mantenemos el peso de la fuente */
+      padding: 0; /* Mantenemos el padding en 0 */
+      margin-top: -90px; /* Ajustamos el margen superior */
+      color: #191919; /* Mantenemos el color original */
+  }
+
+  .message p {
+      font-size: 1.0em; /* Mantenemos el tamaño original de la fuente */
+      font-weight: 420; /* Mantenemos el peso de la fuente */
+      color: #000000; /* Mantenemos el color original */
+      margin-top: 265px; /* Ajustamos el margen superior */
+  }
+
+  .message button {
+      margin: 10px 10; /* Espacio vertical para separar de otros elementos */
+      font-size: 14px;
+  }
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 375px) {
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #ffffff;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size: 16px; /* Ajustado para dispositivos móviles */
+  }
+
+  #principal, #sliderPrincipal, .welcome-back, .container-form, .formulario, .formulario1, .message, .btn-upload, .btnF, .imagen-perfil {
+      width: 100%; /* Todos los contenedores tomarán el ancho completo de la pantalla */
+      box-sizing: border-box;
+  }
+
+  #principal, #sliderPrincipal {
+      padding: 5px;
+  }
+
+  #nombre {
+      font-size: 1rem; /* El texto dentro del #nombre es más pequeño para adaptarse al tamaño de la pantalla */
+      padding: 10px;
+      text-align: center;
+  }
+
+  .container-form {
+      flex-direction: column; /* Los formularios se apilarán verticalmente */
+      align-items: center;
+      padding: 20px 0; /* Más espacio en la parte superior e inferior */
+  }
+
+  .formulario, .formulario1 {
+      margin-top: 20px; /* Espacio adicional en la parte superior para cada formulario */
+      padding: 15px; /* Añade un relleno para no tener el contenido pegado a los bordes */
+  }
+
+  .welcome-back {
+      flex-direction: column; /* Los elementos dentro de welcome-back también se apilan verticalmente */
+      margin: 10px 0; /* Añade un espacio antes y después */
+      padding: 40 10px; /* Espacio a los lados */
+      margin-top: 350px;
+  }
+
+  .message {
+      margin-top: 20px; /* Espacio antes del mensaje */
+      padding: 50px; /* Relleno alrededor del mensaje */
+  }
+
+  .message h2 {
+      font-size: 1.4rem; /* Tamaño de fuente más pequeño para el encabezado */
+      margin-top: -95;
+  }
+
+  .message p {
+      font-size: 1.0rem; /* Tamaño de fuente más pequeño para el párrafo */
+      margin-top: 210px; /* Espacio después del párrafo */
+  }
+
+  .message button {
+      margin-top: 15px; /* Espacio después del botón */
+      padding: 10px 20px; /* Relleno dentro del botón para que sea más fácil de tocar */
+  }
+
+  .imagen-perfil {
+      width: 60px; /* Imagen de perfil más pequeña */
+      height: 60px; /* Imagen de perfil más pequeña */
+      margin: 10px auto; /* Centra la imagen y añade espacio alrededor */
+  }
+
+  .formulario input, .formulario1 input {
+      margin: 15px 18px; /* Espacio vertical entre inputs */
+  }
+
+  /* Ajustes para botones e íconos si es necesario */
+  .btn-upload, .btnF {
+      margin: 10px auto; /* Centra y añade espacio alrededor de los botones */
+  }
+
+  
+}

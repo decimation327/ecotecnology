@@ -1,0 +1,90 @@
+<div class="lds-hourglass loader" id="loader"></div>
+<main>
+    <div id="principal">
+        <div id="sliderPrincipal">
+            <p id="nombre"><b> Transforma tu vieja electrónica en oportunidades nuevas. Envía tus componentes dañados a Ecotecnology y únete a nuestra misión de reutilizar y reducir residuos electrónicos. ¡Compra con propósito, compra en Ecotecnologi!.
+            </b></p>
+            <p id="nombre"><b>
+                ¡Pero espera, hay más! Explora nuestro catálogo completo en ecotechnology.com y descubre descuentos exclusivos en una amplia gama de productos electrónicos. ¡No te pierdas las ofertas de Ecotechnology, donde la innovación y el ahorro se encuentran!
+            </b>
+
+            </p>
+        </div>
+            
+    </div>
+    
+    <div class="clear"></div>
+  
+
+    <a [routerLink]="[ '/home']">
+    <img class="logo" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/Logo_yfgnqs.jpg" alt="">
+    </a>
+
+    <div class="container">
+        <!-- Añade (ngSubmit) para manejar el envío del formulario y utiliza [(ngModel)] para enlazar el campo de entrada -->
+        <form  class="search-bar" (submit)="$event.preventDefault()">
+            <input class="input" type="text" placeholder="Buscar" name="q" [(ngModel)]="terminoDeBusqueda" (ngModelChange)="buscarProductos($event)" required>
+            <button type="submit">
+                <img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838964/busqueda_t2piuj.png" alt="" width="65px">
+            </button>
+            
+        </form>
+        
+    </div>
+    <div class="clear"></div>
+    <div class="buscadorproductos">
+        <div *ngFor="let producto of productosEncontrados">
+          <img [src]="producto.urlImagen" alt="" class="imgProd">
+          <span>{{ producto.nombrePro }}</span>
+        </div>
+      </div>
+      
+   
+      
+      
+
+    <div class="clear"></div>
+
+    <a [routerLink]="[ '/Agenda-Usuario']"><img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838966/reciclajep_n6fepf.jpg" alt="" id="reciclaje"></a>
+
+    <div class="clear"></div>
+    <a [routerLink]="[ '/Agenda-Usuario']">
+        
+    </a>
+
+    <div class="clear"></div>
+
+    <header id="carrito">
+        <button id="boton-carrito" (click)="openVerticalModal()"><img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838964/carrito_de_compras_ztdwgy.png" alt="" width="65px"><span
+                id="contadorCarrito">{{ cantidadProductosEnCarrito}}</span></button>
+    </header>
+
+
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+            <button onclick="alert('Registrate primero para continuar');" id="comprar">
+                Comprar
+            </button>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <a [routerLink]="[ '/Login']">
+        <p id="cuenta">Crear cuenta</p>
+    </a>
+
+    <div class="clear"></div>
+
+     <a [routerLink]="[ '/Login']">
+        <img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/log_in_newvip.png" alt="" id="login">
+    </a>
+
+    <div class="clear"></div>

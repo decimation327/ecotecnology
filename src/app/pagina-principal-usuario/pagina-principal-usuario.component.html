@@ -1,0 +1,250 @@
+<main>
+    <div>
+        <app-nav-usuario></app-nav-usuario>        
+    </div>
+    
+
+    
+<div id="header">
+  <ul class="nav">
+        <li><a  class="htitulos" [routerLink]=" ['/Pantallas'] ">Pantallas</a>
+
+
+        <li><a  class="htitulos" [routerLink]="['/CategoriaChasis']" >chasís</a>
+
+
+        <li><a  class="htitulos" [routerLink]="['/Perifericos']">Perifericos</a>
+
+          
+        <li><a  class="htitulos" [routerLink]=" ['/CategoriaSillas'] ">Sillas</a>
+  </ul>
+  
+  
+  </div>
+  
+  <div class="clear"></div>
+  
+  <section id="carrusel">
+    <ul>
+        <li><img class="tecladod" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838967/teclado_inoxql.jpg" alt=""></li>
+        <li><img class="pc" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838966/pc_ih5hbd.jpg" alt=""></li>
+        <li><img class="mouse" src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838966/mouse_stwbrq.jpg" alt=""></li>
+    </ul>
+  </section>
+  
+  <div class="clear"></div>
+  
+  <section id="seccion">
+    <p id="nuevo" [routerLink]="['/CangearPuntos']">Redirmir Puntos</p>
+  </section>
+  
+  <div class="clear"></div>
+  
+  
+  <section class="cards">
+  
+    <div class="container"></div>
+    <div class="contenedorCards">
+      <div *ngFor="let item  of productos" class="producto">
+        <div class="innerProd">
+          <div class="imgWrapper">
+            <img [src]="item.urlImagen" alt="" class="imgProd">
+          </div>
+          <a class="info">
+            <h3 class="prodName">{{item.nombrePro}}</h3>
+            <p class="prodDesc">HyperX Alloy Origins mecánico Tenkeyless para Gaming RGB</p>
+            <div class="precios">
+              <p class="precio" id="precio">{{ item.precioPro | currency:'COP':'symbol':'1.0-0' }}</p>
+              <div>
+              <p class="precioOriginal">
+                "5000"
+              </p>
+              <p class="stock">
+                "En stock"
+              </p>
+            </div>
+            </div>
+          </a>
+          <div class="actions">
+           
+            <div class="boton alCarrito" (click)="showAlert()" (click)="agregarCarrito(item)">Agregar al Carrito</div>
+            <button class="Detalle"><a [routerLink]="['/Producto', item.idPro]" id="vermasPro">Ver Detalle</a></button>
+  
+                <div class="row-buttons">
+                  <div class="checkBox comparar">
+                    <input type="checkbox">
+                    <div class="icon">
+  
+                    </div>
+                    <p class="checkBoxLabel">Comprar</p>
+                  </div>
+                  <div class="aFavs favoritos">
+                    <div class="icono">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                        <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+    
+  
+  
+  
+  <div class="clear">
+      <a id="vermas" href="">Ver más</a>
+  </div>
+  
+  
+  <div id="contenedorMarcas">
+  
+      <div class="marcas">
+  
+          <div class="slider">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV6QiRuaGErv2aZZqAyce6xWdCr_Kjm_wbxC7wM19AJLDCetetCBwPBdz57quFIkZDcds&usqp=CAU" alt="" id="acer" class="imagen">
+          </div>
+          <div class="slider">
+             <img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838964/asus_nnc2mf.png" alt="" id="asus" class="imagen">
+          </div>
+          <div class="slider">
+              <img src="https://logowik.com/content/uploads/images/445_dell.jpg" alt="" id="dell" class="imagen">
+          </div>
+          <div class="slider">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg36OAh6x_ypafbplGLSZDdSB5Abz-gMjINA&usqp=CAU" alt="" id="intel" class="imagen">  
+          </div>
+          <div class="slider">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaVNb8gwnyynrDIxcnxt1KCIiO3f6ZUWdiwQKrCzk1tceJUhDMXoPP0wZKozaGdNpdLrM&usqp=CAU" alt="" id="msi" class="imagen">     
+          </div>
+          <div class="slider">
+             <img src="https://alianzaestrategicasas.com/wp-content/uploads/2015/08/SAMSUNG1.png" alt="" id="msi" class="imagen">   
+          </div>
+          <div class="slider">
+              <img src="https://alianzaestrategicasas.com/wp-content/uploads/2015/08/Canon_logo.png" alt="" id="msi" class="imagen">    
+          </div>
+  
+  
+  
+  
+  
+  
+          <div class="slider">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV6QiRuaGErv2aZZqAyce6xWdCr_Kjm_wbxC7wM19AJLDCetetCBwPBdz57quFIkZDcds&usqp=CAU" alt="" id="acer" class="imagenAcer">
+          </div>
+          <div class="slider">
+            <img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838964/asus_nnc2mf.png" alt="" id="asus" class="imagen">
+          </div>
+          <div class="slider">
+              <img src="https://logowik.com/content/uploads/images/445_dell.jpg" alt="" id="dell" class="imagenDell">
+          </div>
+          <div class="slider">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg36OAh6x_ypafbplGLSZDdSB5Abz-gMjINA&usqp=CAU" alt="" id="imagenIntel" class="imagenIntel">    
+          </div>
+          <div class="slider">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaVNb8gwnyynrDIxcnxt1KCIiO3f6ZUWdiwQKrCzk1tceJUhDMXoPP0wZKozaGdNpdLrM&usqp=CAU" alt="" id="msi" class="imagenMsi">    
+          </div>
+          <div class="slider">
+              <img src="https://alianzaestrategicasas.com/wp-content/uploads/2015/08/SAMSUNG1.png" alt="" id="msi" class="imagen">     
+          </div>
+          <div class="slider">
+              <img src="https://alianzaestrategicasas.com/wp-content/uploads/2015/08/Canon_logo.png" alt="" id="msi" class="imagen">    
+          </div>
+      </div>
+  
+  
+  
+    
+  
+   </div>
+  
+  
+  <div class="clear"></div>
+  
+  
+  <section id="informacion">
+  
+    <div id="cuadro1">
+        <p><b>Sobre nosotros</b></p>
+        <hr class="hrinfo1">
+        <p>Hola ayudadores del mundo! Somos una tienda que vende componentes de segunda y nuevos que son importados
+            desde bogota para diseñar
+            tu pc de la mejor manera, puedes incontrar silla, portatiles, monitores, chasis y mucho mas, todo esto es
+            para que trabaje de la mejor
+            manera con un buen pc tambien le tenemos un opcion de poder intercambiar componentes dañados o viejos.
+            trabajamos a nivel cafetero con envio.
+        </p>
+    </div>
+  
+    <div class="clear"></div>
+  
+    <div id="cuadro2">
+        <p><b>Contacto</b></p>
+        <hr class="hrinfo">
+        <p>ecotecno5895@gmail.com</p>
+        <p>3217767865 - 3005334694</p>
+  
+        <div id="redes">
+  
+            <a class="fb" href="#"><img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/facebook_u2udk9.png" alt="" width="80px"></a>
+  
+            <a class="insta" href="#"><img src="https://res.cloudinary.com/dspugxtgr/image/upload/v1687838965/instragram_vonvwz.png" alt="" width="50px"></a>
+        </div>
+  
+    </div>
+  
+    <div class="clear"></div>
+  
+  
+    <div id="cuadro3">
+        <p><b>Menú</b></p>
+        <hr class="hrinfo">
+        <p>Politicas de garantia</p>
+        <p>Terminos y condiciones</p>
+        <p>Politicas de privacidad</p>
+    </div>
+  </section>
+  <!-- contenido-pagina-principal.component.html -->
+  <div id="chatbot-icon" (click)="toggleChatbot()">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9GBQfi8_ZpRRmxzTs0K0SlbJd20UUl0ybg&usqp=CAU" alt="chatbot-icon">
+  </div>
+  
+  <div id="chatbot-container"  *ngIf="showChatbot">
+    <div class="chatbot-content">
+      <div class="chat-title">
+        <h3>Chatbot</h3>
+      </div>
+      <div class="chat-messages">
+      <div *ngFor="let item of respuestaServidor.history">
+        <p *ngIf="item.role === 'user'" class="user-message">{{ item.parts }}</p>
+        <p *ngIf="item.role === 'model'" class="model-message">{{ item.parts }}</p>
+      </div>
+    </div>
+      <form>
+        <!-- Utilizamos [(ngModel)] para enlazar el valor del input con la propiedad pregunta en el componente -->
+        <input type="text" placeholder="Escribe tu pregunta..." (input)="onInput($event)">
+        <!-- Cuando se hace clic en el botón, llamamos a la función enviarPregunta() -->
+        <button type="button" (click)="enviarPregunta()">Enviar</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+
+
+
+    <div>
+        <app-footer></app-footer>
+    </div>
+</main>

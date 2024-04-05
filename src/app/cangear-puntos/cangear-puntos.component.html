@@ -1,0 +1,98 @@
+<div>
+  <div>
+    <app-nav-usuario></app-nav-usuario>  
+  </div>
+</div>
+
+
+<div class="volver">
+  <!-- Botón para volver atrás -->
+  <button (click)="goBack()" class="btn-go-back">
+    <span class="sr-only">Volver</span>
+    <svg class="icon icon-arrow-left" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M15 12l-6-6v4H3v4h6v4l6-6z"/>
+    </svg>
+  </button>
+</div>
+
+
+
+<hr>
+
+<div class="filtro-container">
+  <p id="nuevo">¡Productos!</p>
+  
+  <div class="filtro">
+    <h2 (click)="toggleOpcionesFiltro()">Filtro <span>&#9662;</span></h2>
+    <ul *ngIf="mostrarOpciones">
+      <li (click)="seleccionarFiltro('')">Todos los productos</li>
+      <li *ngFor="let opcion of opcionesFiltro" (click)="seleccionarFiltro(opcion)">
+        {{ opcion }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<!-- Mostrar los puntos -->
+<p>Puntos: {{ totalPuntos }}</p>
+
+
+
+<section class="cards">
+  
+  <div class="container"></div>
+  <div class="contenedorCards">
+    <div *ngFor="let producto of productos" class="producto">
+      <div class="innerProd">
+        <div class="imgWrapper">
+          <img [src]="producto.img" alt="" class="imgProd">
+        </div>
+        <a class="info">
+          <h3 class="prodName">{{producto.nombre}}</h3>
+          <p class="prodDesc">HyperX Alloy Origins mecánico Tenkeyless para Gaming RGB</p>
+          <div class="precios">
+            <p class="precio" id="precio">{{producto.precio}} $</p>
+            <div>
+            <p class="precioOriginal">
+              "5000"
+            </p>
+            <p class="stock">
+              "En stock"
+            </p>
+          </div>
+          </div>
+        </a>
+          <div class="actions">
+            <button class="Detalle" id="vermasPro" (click)="capturarProductoSeleccionado(producto)" (click)="canjeodePuntos()" >Cangear puntos</button>
+              
+              <div class="row-buttons">
+                <div class="checkBox comparar">
+                  <input type="checkbox">
+                  <div class="icon">
+
+                  </div>
+                  <p class="checkBoxLabel">Comprar</p>
+                </div>
+                <div class="aFavs favoritos">
+                  <div class="icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                      <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div>
+  <div>
+    <app-footer></app-footer>
+  </div>
+</div>

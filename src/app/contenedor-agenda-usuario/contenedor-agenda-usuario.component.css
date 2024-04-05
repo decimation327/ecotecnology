@@ -1,0 +1,500 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.btn-go-back {
+  /* Agrega sombra al botón */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.btn-go-back:hover {
+  transform: scale(1.1);
+  background-color: rgb(14, 111, 156);
+  color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Agrega más sombra al hover */
+}
+
+.btn-go-back:active {
+  transform: scale(0.9);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Agrega sombra al pulseo */
+}
+
+.icon-arrow-left {
+  fill: #333;
+  width: 44px;
+  height: 44px;
+  transform: rotateY(180deg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+
+
+
+
+.contenedor {
+  background-color: #dedcdc; /* Tonalidad más clarita para filas impares */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ... (código existente) ... */
+.descripcion {
+  padding: 10px 0px 22px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.tituloAgenda {
+  color: #1357a0;
+  font-weight: 500;
+}
+
+.parrafoAgenda {
+  font-size: 22px;
+  width: 100vh;
+}
+.agenda {
+  background-color: #dedcdc86; /* Tonalidad más clarita para filas impares */
+  width: 99%;
+  margin-left: 90px;
+}
+.titulo {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #0f58a7;
+  padding: 20px;
+}
+
+
+/* Cambios para los botones del calendario */
+:host ::ng-deep .fc-button {
+  background-color: #1566bd;
+  /* Color de fondo principal */
+  color: #fff;
+  /* Color del texto */
+  border-color: #0056b3;
+  /* Color del borde */
+}
+
+:host ::ng-deep .fc-button:hover {
+  background-color: #3282b8;
+  /* Cambio de color al pasar el ratón */
+  color: #fff;
+  border-color: #0056b3;
+}
+
+:host ::ng-deep .fc-button-disabled {
+  background-color: #3282b8;
+  /* Color de fondo cuando está deshabilitado */
+  border-color: #1a78aa;
+  color: var(--fc-button-text-color);
+}
+
+/* Cambios de colores para algunos títulos */
+:host ::ng-deep .modal-title {
+  color: white;
+  /* Color del título del modal */
+}
+
+:host ::ng-deep .modal-header {
+  background-color: #3282b8;
+  /* Color de fondo del encabezado del modal */
+  color: white;
+}
+
+
+  .modal-content{
+    position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 60vh;
+      height: 75vh;
+      color: var(--bs-modal-color);
+      pointer-events: auto;
+      background-color: var(--bs-modal-bg);
+      background-clip: padding-box;
+      border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+      border-radius: var(--bs-modal-border-radius);
+      outline: 0;
+  }
+
+.modal-body input {
+  width: 26vh;
+  height: 4vh;
+  margin-bottom: 12px;
+}
+
+.modal-content h4 {
+  width: 26vh;
+}
+/* ... (código existente) ... */
+
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.inputs-left {
+  width: 48%; /* Ajusta según sea necesario */
+}
+
+.inputs-right {
+  width: 48%; /* Ajusta según sea necesario */
+}
+
+/* ... (código existente) ... */
+.modal-dialog{
+  width: auto;
+  height: 100%;
+}
+
+.btnModal {
+  width: auto;
+  text-align: center;
+  font-size: 90px;
+}
+
+.btn-primary {
+  position: relative;
+  box-shadow: 0 0 5px  #3cff00, 0 0 15px #3cff00;
+  background-color: #2981bb;
+  border: 1px solid rgb(31, 116, 14);
+  transition: all .3s ease-in;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 324px;
+  letter-spacing: 7px;
+  font-weight: 900;
+  font-size: 27px;
+  margin-top: 47px;
+  margin-bottom: 47px;
+
+}
+.btn-primary:hover {
+  background-color: rgb(14, 111, 156);
+  box-shadow: 0 0 5px rgb(14, 111, 156), 0 0 25px rgb(14, 111, 156), 0 0 50px rgb(14, 111, 156);
+}
+
+/* ... (código existente) ... */
+
+
+#btnCerrar {
+  background-color: rgba(222, 74, 74, 0.899);
+}
+
+#btnEnviar {
+  background-color: #1566bd;
+  color: white;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #00ff88;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+@media (min-width: 992px) and (max-width: 1159px) {
+  .contenedorPadre {
+    width: 90%; /* Reducir el ancho del contenedor para adaptarse al tamaño de la pantalla */
+    margin: 0 auto; /* Centrar el contenedor en la pantalla */
+  }
+
+  .descripcion {
+    text-align: center; /* Centrar el texto */
+    width: 100%; /* Utilizar todo el ancho disponible */
+  }
+
+  .parrafoAgenda {
+    width: 100%; /* Utilizar todo el ancho disponible */
+  }
+
+  .agenda {
+    width: 100%; /* Utilizar todo el ancho disponible */
+    margin-left: 0; /* Eliminar el margen izquierdo */
+    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
+  }
+  
+  .modal-dialog {
+    width: 80%; /* Ajustar el ancho del modal al 80% del tamaño de la pantalla */
+    max-width: none; /* Eliminar el ancho máximo del modal */
+    margin: 50px auto; /* Centrar el modal en la pantalla y agregar espacio superior e inferior */
+  }
+
+  .modal-body {
+    flex-direction: column; /* Cambiar la disposición de los elementos a columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+  }
+
+  .inputs-left,
+  .inputs-right {
+    width: 90%; /* Utilizar el 90% del ancho para los campos del formulario */
+    margin-bottom: 10px; /* Añadir espacio entre los campos */
+  }
+
+  .btnModal {
+    text-align: center; /* Centrar el botón de "Agendar cita" */
+    margin-top: 20px; /* Añadir espacio encima del botón */
+    margin-bottom: 20px; /* Añadir espacio debajo del botón */
+  }
+
+  .btn-primary {
+    padding: 12px 150px; /* Ajustar el padding horizontal del botón */
+    font-size: 18px; /* Ajustar el tamaño de la fuente del botón */
+    margin-top: 20px; /* Añadir margen superior al botón */
+    margin-bottom: 20px; /* Añadir margen inferior al botón */
+  }
+
+  .modal-content {
+    max-height: 70vh; /* Limitar la altura máxima del contenido del modal */
+    overflow-y: auto; /* Agregar desplazamiento vertical si el contenido es demasiado largo */
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 1160px) and (max-width: 1323px) {
+  .contenedorPadre {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .descripcion {
+    text-align: center;
+    width: 100%;
+  }
+
+  .parrafoAgenda {
+    width: 100%;
+  }
+
+  .agenda {
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto; /* Añadir desplazamiento horizontal si es necesario */
+  }
+  
+  .modal-dialog {
+    width: 90%; /* Ajustar el ancho del modal al 90% del tamaño de la pantalla */
+    max-width: none; /* Eliminar el ancho máximo del modal */
+    margin: 30px auto; /* Alinear el modal en el centro verticalmente y dejar espacio alrededor */
+  }
+
+  .modal-body {
+    flex-direction: column; /* Cambiar la disposición de los elementos a una columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+  }
+
+  .inputs-left,
+  .inputs-right {
+    width: 100%; /* Utilizar el 100% del ancho para los campos del formulario */
+    margin-bottom: 10px; /* Añadir espacio entre los campos */
+  }
+
+  .btnModal {
+    text-align: center; /* Centrar el botón de "Agendar cita" */
+    margin-top: 20px; /* Añadir espacio encima del botón */
+    
+  }
+
+  .btn-primary {
+    padding: 12px 150px; /* Reducir el padding horizontal del botón */
+    font-size: 20px; /* Ajustar el tamaño de la fuente del botón */
+    margin-top: 20px; /* Añadir margen superior al botón */
+    margin-bottom: 20px; /* Añadir margen inferior al botón */
+  }
+
+  .modal-content {
+    max-height: 70vh; /* Limitar la altura máxima del contenido del modal */
+    overflow-y: auto; /* Añadir desplazamiento vertical si el contenido es demasiado largo */
+  }
+}
+
+
+
+
+
+
+@media (min-width: 1324px) and (max-width: 1439px) {
+  .contenedorPadre {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .descripcion {
+    text-align: center;
+    width: 100%;
+  }
+
+  .parrafoAgenda {
+    width: 100%;
+  }
+
+  .agenda {
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto; /* Añadir desplazamiento horizontal si es necesario */
+  }
+  
+  .modal-dialog {
+    width: 90%; /* Ajustar el ancho del modal al 90% del tamaño de la pantalla */
+    max-width: none; /* Eliminar el ancho máximo del modal */
+    margin: 30px auto; /* Alinear el modal en el centro verticalmente y dejar espacio alrededor */
+  }
+
+  .modal-body {
+    flex-direction: column; /* Cambiar la disposición de los elementos a una columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+  }
+
+  .inputs-left,
+  .inputs-right {
+    width: 100%; /* Utilizar el 100% del ancho para los campos del formulario */
+    margin-bottom: 10px; /* Añadir espacio entre los campos */
+  }
+
+  .btnModal {
+    text-align: center; /* Centrar el botón de "Agendar cita" */
+    margin-top: 20px; /* Añadir espacio encima del botón */
+    
+  }
+
+  .btn-primary {
+    padding: 12px 200px; /* Reducir el padding horizontal del botón */
+    font-size: 20px; /* Ajustar el tamaño de la fuente del botón */
+    margin-top: 20px; /* Añadir margen superior al botón */
+    margin-bottom: 20px; /* Añadir margen inferior al botón */
+  }
+
+  .modal-content {
+    max-height: 70vh; /* Limitar la altura máxima del contenido del modal */
+    overflow-y: auto; /* Añadir desplazamiento vertical si el contenido es demasiado largo */
+  }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1440px) {
+  .contenedorPadre {
+    width: 90%; /* Reducir el ancho del contenedor para que no se extienda demasiado en pantallas grandes */
+    margin: 0 auto;
+  }
+
+  .tituloAgenda {
+    font-size: inherit;
+  }
+
+  .descripcion {
+    text-align: center;
+    width: 80%;
+    margin-left: 180px;
+    font-size: 40px;
+  }
+
+  .parrafoAgenda {
+    width: 100%;
+  }
+
+  .agenda {
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto; /* Añadir desplazamiento horizontal si es necesario */
+  }
+  
+  .modal-dialog {
+    width: 70%; /* Ajustar el ancho del modal al 70% del tamaño de la pantalla */
+    max-width: none; /* Eliminar el ancho máximo del modal */
+    margin: 50px auto; /* Alinear el modal en el centro verticalmente y dejar más espacio alrededor */
+  }
+
+  .modal-body {
+    flex-direction: row; /* Mantener la disposición de los elementos en fila */
+    align-items: flex-start; /* Alinear los elementos al inicio */
+  }
+
+  .inputs-left,
+  .inputs-right {
+    width: 45%; /* Utilizar el 45% del ancho para los campos del formulario */
+    margin-bottom: 10px; /* Añadir espacio entre los campos */
+  }
+
+  .btnModal {
+    text-align: center; /* Centrar el botón de "Agendar cita" */
+    margin-top: 30px; /* Añadir más espacio encima del botón */
+    margin-bottom: 20px; /* Añadir espacio debajo del botón */
+  }
+
+  .btn-primary {
+    padding: 12px 350px; /* Aumentar el padding horizontal del botón */
+    font-size: 24px; /* Reducir ligeramente el tamaño de la fuente del botón */
+    margin-top: 20px; /* Añadir margen superior al botón */
+    margin-bottom: 20px; /* Añadir margen inferior al botón */
+  }
+
+  .modal-content {
+    max-height: 80vh; /* Aumentar ligeramente la altura máxima del contenido del modal */
+    overflow-y: auto; /* Mantener el desplazamiento vertical si el contenido es demasiado largo */
+  }
+}

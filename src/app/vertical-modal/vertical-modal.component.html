@@ -1,0 +1,39 @@
+<header id="page-header">
+    <div class="container">
+        <h1>Carrito</h1>
+    </div>
+</header>
+<section class="padded">
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Cod</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listaItemsCarrito; let i = index">
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.precio | number: '.2' }}</td>
+                    <td>{{item.cantidad}}</td>
+                    <td>{{item.cantidad! * item.precio! | number: '.2'}}</td>
+                    <td>
+                        <button (click)="disminuirCantidad(item)" class="btn btn-secondary">-</button>
+                        {{item.cantidad}}
+                        <button (click)="aumentarCantidad(item)" class="btn btn-secondary">+</button>
+                    </td>
+                    <td>{{item.cantidad! * item.precio! | number: '.2'}}</td>
+                    <td><button (click)="eliminarItem(i)" class="btn btn-danger">Eliminar</button></td> <!-- Botón para eliminar el producto -->
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger" (click)="vaciarCarrito()">Vaciar carrito</button>
+        <a href="https://payco.link/2798654"><img src="https://multimedia.epayco.co/dashboard/btns/btn5.png"></a>
+
+    </div>
+</section>

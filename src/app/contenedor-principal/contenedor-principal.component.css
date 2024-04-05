@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: -7px;
+}
+
+main {
+  background-color: white;
+  margin: 0 auto;
+  width: 1900px;
+  border: 0.1px solid grey;
+}
+
+@media (min-width: 1324px) and (max-width: 1439px){
+  main {
+    background-color: white;
+    margin: 0 auto;
+    width: 100%;
+    border: 0.1px solid grey;
+
+  }
+}
+@media (min-width: 1024px) and (max-width: 1323px) {
+  main {
+    background-color: white;
+    margin: 0 auto;
+    width: 100%;
+    border: 0.1px solid grey;
+
+  }
+}
+@media (min-width: 1440px) {
+  main {
+    background-color: white;
+    margin: 0 auto;
+    border: 0.1px solid grey;
+  }
+}
