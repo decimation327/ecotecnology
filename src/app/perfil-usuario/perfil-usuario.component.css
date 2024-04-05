@@ -150,7 +150,7 @@
 
 
 #boton1{
-    background: linear-gradient(to bottom, rgb(36, 210, 30) 90%, white 95%);
+    background: linear-gradient(to bottom, rgb(36, 210, 30) 100%, white 100%);
     color: white;
     font-size: 21px;
     border-top: 2px solid white; 
@@ -161,7 +161,7 @@
 
 
 #boton2{
-    background: linear-gradient(to bottom, rgb(14, 111, 156) 90%, white 95%);
+    background: linear-gradient(to bottom, rgb(14, 111, 156) 100%, white 100%);
     color: white;
     font-size: 21px;
     border-top: 2px solid white; 
