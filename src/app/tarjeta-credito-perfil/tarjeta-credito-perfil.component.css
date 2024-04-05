@@ -89,6 +89,7 @@
 
 #boton1{
   background: linear-gradient(to bottom, rgb(14, 111, 156) 100%, white 100%);
+  height: 15vh;
   color: white;
   font-size: 21px;
   border-top: 2px solid white; 
