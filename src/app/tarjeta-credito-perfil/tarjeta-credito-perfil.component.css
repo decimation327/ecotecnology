@@ -329,7 +329,7 @@ body{
 
 @media (min-width: 1324px) and (max-width: 1439px) {
   .SeccionBotones1 {
-      padding-left: 395px; /* Ajuste del padding para mantener margen */
+      padding-left: 400px; /* Ajuste del padding para mantener margen */
       padding-right: 50px; /* Ajuste del padding para mantener margen */
   }
   
